@@ -1,6 +1,7 @@
 import employeeSystemImg from '../assets/employee-system.png';
 import stockMarketImg from '../assets/stock-market.png';
 import portfolioCmsImg from '../assets/portfolio-cms.png';
+import aiBusinessImg from '../assets/ai-business.png';
 
 export const projects = [
   {
@@ -28,7 +29,7 @@ export const projects = [
     tech: ["React.js", "JavaScript", "AI APIs"],
     liveLink: "#",
     githubLink: "#",
-    image: null
+    image: aiBusinessImg
   },
   {
     id: 4,
