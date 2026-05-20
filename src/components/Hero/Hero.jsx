@@ -4,7 +4,7 @@ import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const Hero = () => {
-  const roles = ["Full Stack Developer.", "Problem Solver.", "UI/UX Enthusiast."];
+  const roles = ["Full Stack Developer.", "Problem Solver.", "UI/UX Enthusiast.", "Trader."];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
