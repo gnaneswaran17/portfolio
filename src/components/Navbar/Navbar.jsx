@@ -56,10 +56,26 @@ export const Navbar = () => {
         >
           {/* Logo */}
           <Link to="home" smooth={true} duration={800} className="cursor-pointer z-50">
-            <motion.div whileTap={{ scale: 0.95 }} className="flex items-center gap-2 group">
-              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-tr from-[#ff6b00] to-[#ff4d85] flex items-center justify-center text-white font-bold text-sm md:text-base shadow-[0_0_20px_rgba(255,107,0,0.4)] transition-transform duration-300">
-                G
+            <motion.div 
+              whileHover={{ y: -1, scale: 1.02 }} 
+              whileTap={{ scale: 0.95 }} 
+              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+              className="flex items-center gap-3 group relative"
+            >
+              {/* Floating Blur / Glow Behind Logo */}
+              <div className="absolute top-1/2 left-4 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-tr from-[#ff6b00]/40 to-[#ff4d85]/40 rounded-full blur-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              
+              {/* Logo Icon (Glassmorphism Orb) */}
+              <div className="relative w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-[rgba(255,107,0,0.8)] to-[rgba(255,77,133,0.8)] shadow-[0_4px_20px_rgba(255,107,0,0.3)] group-hover:shadow-[0_8px_30px_rgba(255,107,0,0.5)] transition-shadow duration-500 overflow-hidden flex-shrink-0">
+                {/* Inner Light Reflection Layer */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent opacity-60 rounded-full mix-blend-overlay"></div>
+                {/* Glass Core */}
+                <div className="absolute inset-[1px] rounded-full bg-[rgba(10,10,10,0.4)] backdrop-blur-md flex items-center justify-center border border-white/10 z-10">
+                   <span className="text-[#f5f5f7] font-bold text-sm md:text-base tracking-tighter drop-shadow-md">G</span>
+                </div>
               </div>
+
+              {/* Text Area */}
               <AnimatePresence mode="wait">
                 {!isScrolled && (
                   <motion.span
@@ -67,7 +83,7 @@ export const Navbar = () => {
                     animate={{ opacity: 1, width: "auto" }}
                     exit={{ opacity: 0, width: 0 }}
                     transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                    className="text-white font-semibold tracking-tight text-lg md:text-xl whitespace-nowrap overflow-hidden"
+                    className="font-['SF_Pro_Display',_system-ui,_-apple-system,_sans-serif] font-semibold tracking-[0.02em] text-lg md:text-[20px] whitespace-nowrap overflow-hidden bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] via-[#f5f5f7] to-[#ffb580] drop-shadow-sm transition-all duration-500"
                   >
                     Gnaneswaran
                   </motion.span>
