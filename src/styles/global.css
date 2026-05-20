@@ -17,6 +17,8 @@
       0 12px 48px -4px rgba(0, 0, 0, 0.4), 
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
   }
 
   .glass-card:hover {
@@ -96,11 +98,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* Optimize blur and animations on mobile */
+/* Optimize blur and animations on mobile for locked 60fps */
 @media (max-width: 768px) {
   .animate-aurora-1, .animate-aurora-2, .animate-aurora-3 {
-    filter: blur(80px); /* Reduced blur for performance */
-    opacity: 0.2;
+    filter: blur(60px); /* Reduced blur for performance */
+    opacity: 0.15;
+    will-change: transform, filter;
+  }
+  
+  .glass-card {
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    box-shadow: 0 4px 16px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 }
 

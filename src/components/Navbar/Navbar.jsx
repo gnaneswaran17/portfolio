@@ -181,19 +181,18 @@ export const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
-            transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-            className="fixed inset-0 z-[90] bg-[rgba(5,5,5,0.7)] backdrop-blur-2xl flex flex-col items-center justify-center transform-gpu will-change-transform"
-            style={{ WebkitBackdropFilter: "blur(40px)" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[90] bg-[rgba(5,5,5,0.75)] backdrop-blur-xl flex flex-col items-center justify-center transform-gpu will-change-transform"
           >
             <div className="flex flex-col items-center space-y-6 w-full px-8">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, transition: { delay: 0, duration: 0.2 } }}
-                  transition={{ duration: 0.5, delay: i * 0.05, ease: [0.25, 1, 0.5, 1] }}
-                  className="w-full text-center"
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full text-center transform-gpu"
                 >
                   <Link
                     to={link.path}
@@ -209,11 +208,11 @@ export const Navbar = () => {
               ))}
               
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                transition={{ duration: 0.5, delay: navLinks.length * 0.05, ease: [0.25, 1, 0.5, 1] }}
-                className="w-full pt-8 mt-4 border-t border-[rgba(255,255,255,0.05)]"
+                transition={{ duration: 0.5, delay: navLinks.length * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full pt-8 mt-4 border-t border-[rgba(255,255,255,0.05)] transform-gpu"
               >
                 <Link
                   to="contact"
@@ -221,7 +220,7 @@ export const Navbar = () => {
                   duration={800}
                   offset={-100}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#ff6b00] to-[#ff4d85] text-white text-lg font-bold flex items-center justify-center shadow-[0_0_30px_rgba(255,107,0,0.3)] active:scale-95 transition-transform transform-gpu"
+                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#ff5f1f] via-[#ff3366] to-[#ff8c42] text-white text-lg font-bold flex items-center justify-center shadow-[0_4px_24px_-1px_rgba(255,95,31,0.4)] active:scale-95 transition-transform transform-gpu"
                 >
                   Hire Me
                 </Link>

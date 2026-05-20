@@ -2,6 +2,7 @@ import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { ReactLenis } from 'lenis/react';
 
 export const MainLayout = ({ children }) => {
   const { scrollYProgress } = useScroll();
@@ -25,7 +26,8 @@ export const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className="bg-[#000000] min-h-screen text-[#f5f5f7] font-sans overflow-x-hidden selection:bg-[#ff6b00]/40 selection:text-white relative perspective-1000">
+    <ReactLenis root options={{ lerp: 0.08, duration: 1.5, smoothWheel: true }}>
+      <div className="bg-[#000000] min-h-screen text-[#f5f5f7] font-sans overflow-x-hidden selection:bg-[#ff6b00]/40 selection:text-white relative perspective-1000">
       
       {/* Global Dynamic Aurora Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[#000]">
@@ -64,5 +66,6 @@ export const MainLayout = ({ children }) => {
         <Footer />
       </div>
     </div>
+    </ReactLenis>
   );
 };
