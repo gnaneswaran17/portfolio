@@ -67,8 +67,8 @@ export const Navbar = () => {
               <div className="absolute top-1/2 left-4 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-tr from-[#ff5f1f]/40 to-[#ff3366]/40 rounded-full blur-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               
               {/* Logo Icon */}
-              <div className="relative w-8 h-8 md:w-9 md:h-9 rounded-[10px] shadow-[0_4px_20px_rgba(255,95,31,0.3)] group-hover:shadow-[0_8px_30px_rgba(255,95,31,0.5)] transition-shadow duration-500 overflow-hidden flex-shrink-0">
-                <img src={logo} alt="Gnaneswaran Logo" className="w-full h-full object-cover" />
+              <div className="relative w-8 h-8 md:w-10 md:h-10 flex-shrink-0 transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(255,95,31,0.6)] drop-shadow-[0_0_8px_rgba(255,95,31,0.3)]">
+                <img src={logo} alt="Gnaneswaran Logo" className="w-full h-full object-contain" />
               </div>
 
               {/* Text Area */}
