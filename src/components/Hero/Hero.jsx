@@ -93,7 +93,7 @@ export const Hero = () => {
 
           <div className="flex items-center gap-8 mt-12 md:mt-16 justify-center">
             <motion.a 
-              href="https://github.com" 
+              href="https://github.com/gnaneswaran17" 
               target="_blank" 
               rel="noopener noreferrer" 
               whileHover={{ scale: 1.15, y: -4 }}
@@ -104,7 +104,7 @@ export const Hero = () => {
               <FaGithub />
             </motion.a>
             <motion.a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/gnaneswarana/" 
               target="_blank" 
               rel="noopener noreferrer" 
               whileHover={{ scale: 1.15, y: -4 }}
@@ -117,17 +117,6 @@ export const Hero = () => {
           </div>
         </motion.div>
       </div>
-      
-      {/* Scroll indicator - hidden on very small screens */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-[#515154]"
-      >
-        <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-[#515154] to-transparent"></div>
-      </motion.div>
     </section>
   );
 };

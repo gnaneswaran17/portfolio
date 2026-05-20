@@ -36,7 +36,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-[#86868b] font-medium text-[10px] sm:text-xs mb-1 uppercase tracking-widest">Email</h4>
-                <a href="mailto:contact@gnaneswaran.dev" className="text-[#f5f5f7] text-sm sm:text-[17px] font-semibold hover:text-[#ff6b00] transition-colors tracking-tight">contact@gnaneswaran.dev</a>
+                <a href="mailto:gnaneswaran2004@gmail.com" className="text-[#f5f5f7] text-sm sm:text-[17px] font-semibold hover:text-[#ff6b00] transition-colors tracking-tight">gnaneswaran2004@gmail.com</a>
               </div>
             </motion.div>
 
@@ -46,7 +46,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-[#86868b] font-medium text-[10px] sm:text-xs mb-1 uppercase tracking-widest">LinkedIn</h4>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#f5f5f7] text-sm sm:text-[17px] font-semibold hover:text-[#ff6b00] transition-colors tracking-tight">/in/gnaneswaran</a>
+                <a href="https://www.linkedin.com/in/gnaneswarana/" target="_blank" rel="noopener noreferrer" className="text-[#f5f5f7] text-sm sm:text-[17px] font-semibold hover:text-[#ff6b00] transition-colors tracking-tight">/in/gnaneswarana</a>
               </div>
             </motion.div>
 
@@ -56,7 +56,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="text-[#86868b] font-medium text-[10px] sm:text-xs mb-1 uppercase tracking-widest">GitHub</h4>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-[#f5f5f7] text-sm sm:text-[17px] font-semibold hover:text-[#ff6b00] transition-colors tracking-tight">/gnaneswaran</a>
+                <a href="https://github.com/gnaneswaran17" target="_blank" rel="noopener noreferrer" className="text-[#f5f5f7] text-sm sm:text-[17px] font-semibold hover:text-[#ff6b00] transition-colors tracking-tight">/gnaneswaran17</a>
               </div>
             </motion.div>
 
