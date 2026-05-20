@@ -58,17 +58,21 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="home" smooth={true} duration={800} className="cursor-pointer z-50">
             <motion.div 
-              whileHover={{ y: -1, scale: 1.02 }} 
-              whileTap={{ scale: 0.95 }} 
-              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-              className="flex items-center gap-3 group relative"
+              whileHover={{ y: -2, scale: 1.02 }} 
+              whileTap={{ scale: 0.96 }} 
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3.5 md:gap-4 group relative"
             >
-              {/* Floating Blur / Glow Behind Logo */}
-              <div className="absolute top-1/2 left-4 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-tr from-[#ff5f1f]/40 to-[#ff3366]/40 rounded-full blur-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              {/* Premium Ambient Background Glow */}
+              <div className="absolute top-1/2 left-6 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-[#ff5f1f]/30 to-[#ff3366]/30 rounded-full blur-[20px] opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none"></div>
               
-              {/* Logo Icon */}
-              <div className="relative w-8 h-8 md:w-10 md:h-10 flex-shrink-0 transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(255,95,31,0.6)] drop-shadow-[0_0_8px_rgba(255,95,31,0.3)]">
-                <img src={logo} alt="Gnaneswaran Logo" className="w-full h-full object-contain" />
+              {/* Premium Glass Container for Logo */}
+              <div className="relative w-10 h-10 md:w-[48px] md:h-[48px] flex items-center justify-center rounded-full bg-gradient-to-br from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.02)] backdrop-blur-xl border border-[rgba(255,255,255,0.15)] shadow-[0_4px_24px_-2px_rgba(255,95,31,0.25),_inset_0_1px_0_rgba(255,255,255,0.2)] group-hover:shadow-[0_8px_32px_-4px_rgba(255,95,31,0.4),_inset_0_1px_0_rgba(255,255,255,0.3)] transition-all duration-500 overflow-hidden flex-shrink-0 z-10">
+                {/* Inner Highlight */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-50 mix-blend-overlay pointer-events-none"></div>
+                
+                {/* The 3D Logo */}
+                <img src={logo} alt="Gnaneswaran Logo" className="relative z-10 w-[80%] h-[80%] object-contain drop-shadow-[0_2px_8px_rgba(255,95,31,0.4)] group-hover:drop-shadow-[0_4px_12px_rgba(255,95,31,0.6)] group-hover:scale-105 transition-all duration-500" />
               </div>
 
               {/* Text Area */}
@@ -78,8 +82,8 @@ export const Navbar = () => {
                     initial={{ opacity: 0, width: 0 }}
                     animate={{ opacity: 1, width: "auto" }}
                     exit={{ opacity: 0, width: 0 }}
-                    transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                    className="font-['SF_Pro_Display',_system-ui,_-apple-system,_sans-serif] font-semibold tracking-[0.02em] text-lg md:text-[20px] whitespace-nowrap overflow-hidden bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] via-[#f5f5f7] to-[#ffb580] drop-shadow-sm transition-all duration-500"
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="font-['SF_Pro_Display',_system-ui,_-apple-system,_sans-serif] font-semibold tracking-[0.01em] text-[19px] md:text-[22px] whitespace-nowrap overflow-hidden bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] via-[#f5f5f7] to-[#ffb580] drop-shadow-sm transition-all duration-500 leading-tight"
                   >
                     Gnaneswaran
                   </motion.span>
