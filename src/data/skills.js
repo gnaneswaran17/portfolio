@@ -1,5 +1,5 @@
 import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaAws, FaGithub, FaLinux } from "react-icons/fa";
-import { SiJavascript, SiRedux, SiSpringboot, SiPostgresql, SiMongodb, SiMysql } from "react-icons/si";
+import { SiJavascript, SiRedux, SiSpringboot, SiPostgresql, SiMongodb, SiMysql, SiPython } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { DiJava } from "react-icons/di";
 import { BiNetworkChart, BiData, BiMicrochip } from "react-icons/bi";
@@ -19,6 +19,7 @@ export const skills = [
     category: "Backend",
     items: [
       { name: "Java", icon: DiJava, color: "#007396" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
       { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
       { name: "Node.js", icon: FaNodeJs, color: "#339933" },
       { name: "REST APIs", icon: BiNetworkChart, color: "#38bdf8" }
