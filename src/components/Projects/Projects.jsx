@@ -14,9 +14,12 @@ export const Projects = () => {
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
           className="mb-16 md:mb-20 text-center flex flex-col items-center"
         >
-          <h2 className="text-fluid-h2 font-bold text-[#f5f5f7] mb-4 md:mb-6 tracking-tighter">
-            Selected Work
-          </h2>
+          <div className="relative inline-block mb-4 md:mb-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ff5f1f]/30 to-[#ff3366]/30 blur-[40px] rounded-full opacity-60"></div>
+            <h2 className="text-fluid-h2 font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-[#a0a0a5] tracking-tighter relative z-10 drop-shadow-sm">
+              Selected Work
+            </h2>
+          </div>
           <p className="text-[#86868b] max-w-2xl text-fluid-p font-light px-4">
             A showcase of my recent engineering projects. Built with precision, focusing on scalable backends and seamless user interfaces.
           </p>
@@ -33,10 +36,10 @@ export const Projects = () => {
             href="https://github.com/gnaneswaran17"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 20 }}
-            className="inline-flex items-center gap-2 glass-pill px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-[15px] font-semibold text-white hover:bg-[rgba(255,255,255,0.1)] transition-colors duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="inline-flex items-center gap-2 glass-pill px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-[15px] font-semibold text-white hover:bg-[rgba(255,255,255,0.06)] transition-all duration-500 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4)] hover:border-[rgba(255,255,255,0.2)]"
           >
             View More on GitHub
           </motion.a>

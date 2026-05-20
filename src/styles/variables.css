@@ -4,26 +4,27 @@
   --bg-secondary: #0a0a0a;
   --bg-elevated: #111111;
   
-  /* Aurora Gradient Palette */
-  --aurora-orange: #ff6b00;
-  --aurora-peach: #ff9966;
-  --aurora-pink: #ff4d85;
-  --aurora-purple: #8a2be2;
+  /* Premium Sunset/Aurora Gradient Palette */
+  --aurora-orange: #ff5f1f;
+  --aurora-peach: #ff8c42;
+  --aurora-pink: #ff3366;
+  --aurora-purple: #9d4edd;
   
   /* Text */
   --text-primary: #f5f5f7;
   --text-secondary: #86868b;
   --text-tertiary: #515154;
   
-  /* iOS Glassmorphism (Extremely high blur, subtle white/orange tint) */
-  --glass-bg: rgba(255, 255, 255, 0.02);
-  --glass-bg-hover: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-hover: rgba(255, 255, 255, 0.15);
+  /* iOS Glassmorphism (Extremely high blur, ultra-clean tint) */
+  --glass-bg: rgba(255, 255, 255, 0.015);
+  --glass-bg-hover: rgba(255, 255, 255, 0.035);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-hover: rgba(255, 255, 255, 0.12);
   
-  /* Glows */
-  --glow-subtle: rgba(255, 107, 0, 0.15);
-  --glow-strong: rgba(255, 107, 0, 0.35);
+  /* Cinematic Glows */
+  --glow-subtle: rgba(255, 95, 31, 0.15);
+  --glow-strong: rgba(255, 95, 31, 0.35);
+  --glow-bloom: rgba(255, 140, 66, 0.25);
   
   /* Typography */
   --font-apple: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;

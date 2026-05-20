@@ -41,18 +41,18 @@ export const Navbar = () => {
         <motion.div
           initial={false}
           animate={{
-            backgroundColor: isScrolled ? "rgba(20, 20, 20, 0.6)" : "rgba(20, 20, 20, 0)",
-            borderColor: isScrolled ? "rgba(255, 255, 255, 0.04)" : "rgba(255, 255, 255, 0)",
-            backdropFilter: isScrolled ? "blur(24px) saturate(180%)" : "blur(0px) saturate(100%)",
-            boxShadow: isScrolled ? "0 8px 32px rgba(0,0,0,0.4)" : "0 0px 0px rgba(0,0,0,0)",
+            backgroundColor: isScrolled ? "rgba(10, 10, 10, 0.4)" : "rgba(10, 10, 10, 0)",
+            borderColor: isScrolled ? "rgba(255, 255, 255, 0.03)" : "rgba(255, 255, 255, 0)",
+            backdropFilter: isScrolled ? "blur(32px) saturate(180%)" : "blur(0px) saturate(100%)",
+            boxShadow: isScrolled ? "0 8px 32px -4px rgba(0,0,0,0.3)" : "0 0px 0px rgba(0,0,0,0)",
             padding: isScrolled ? "10px 24px" : "16px 0px",
             borderRadius: isScrolled ? "9999px" : "24px",
             width: isScrolled ? "auto" : "100%",
             maxWidth: "1280px"
           }}
-          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center justify-between border origin-center transform-gpu will-change-transform pointer-events-auto"
-          style={{ WebkitBackdropFilter: isScrolled ? "blur(24px) saturate(180%)" : "blur(0px) saturate(100%)" }}
+          style={{ WebkitBackdropFilter: isScrolled ? "blur(32px) saturate(180%)" : "blur(0px) saturate(100%)" }}
         >
           {/* Logo */}
           <Link to="home" smooth={true} duration={800} className="cursor-pointer z-50">
@@ -123,13 +123,13 @@ export const Navbar = () => {
                 {activeItem === link.path && isScrolled && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 bg-[rgba(255,107,0,0.15)] rounded-full -z-10"
+                    className="absolute inset-0 bg-gradient-to-r from-[rgba(255,95,31,0.15)] to-[rgba(255,51,102,0.15)] rounded-full -z-10 shadow-[0_0_12px_rgba(255,95,31,0.2)]"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
                 {/* Underline for non-scrolled state */}
                 {!isScrolled && (
-                  <span className="absolute -bottom-1 left-4 right-4 h-[2px] bg-gradient-to-r from-[#ff6b00] to-[#ff4d85] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute -bottom-1 left-4 right-4 h-[2px] bg-gradient-to-r from-[#ff5f1f] to-[#ff3366] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 )}
                 <span className="relative z-10 transition-colors duration-300">{link.title}</span>
               </Link>
@@ -141,10 +141,10 @@ export const Navbar = () => {
                 smooth={true}
                 duration={800}
                 offset={-100}
-                className="cursor-pointer relative overflow-hidden group px-6 py-2 rounded-full text-[14px] font-semibold flex items-center justify-center bg-[rgba(255,255,255,0.05)] text-white border border-[rgba(255,255,255,0.08)] hover:bg-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.15)] transition-colors duration-300 shadow-sm"
+                className="cursor-pointer relative overflow-hidden group px-6 py-2 rounded-full text-[14px] font-semibold flex items-center justify-center bg-[rgba(255,255,255,0.03)] text-white border border-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.15)] transition-colors duration-500 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(255,107,0,0.2)] to-[rgba(255,77,133,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span className="relative z-10">Hire Me</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(255,95,31,0.2)] to-[rgba(255,51,102,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <span className="relative z-10 drop-shadow-sm">Hire Me</span>
               </Link>
             </motion.div>
           </div>

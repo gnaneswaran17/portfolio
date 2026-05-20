@@ -83,29 +83,30 @@ export const Contact = () => {
             <form className="flex flex-col gap-4 sm:gap-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 <div className="flex-1 group">
-                  <input type="text" id="name" required className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.05)] focus:border-[rgba(255,255,255,0.2)] transition-all placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Name" />
+                  <input type="text" id="name" required className="w-full bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.04)] focus:border-[#ff5f1f]/50 focus:shadow-[0_0_15px_rgba(255,95,31,0.2)] transition-all duration-300 placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Name" />
                 </div>
                 <div className="flex-1 group">
-                  <input type="email" id="email" required className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.05)] focus:border-[rgba(255,255,255,0.2)] transition-all placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Email" />
+                  <input type="email" id="email" required className="w-full bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.04)] focus:border-[#ff5f1f]/50 focus:shadow-[0_0_15px_rgba(255,95,31,0.2)] transition-all duration-300 placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Email" />
                 </div>
               </div>
               
               <div className="group">
-                <input type="text" id="subject" required className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.05)] focus:border-[rgba(255,255,255,0.2)] transition-all placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Subject" />
+                <input type="text" id="subject" required className="w-full bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.04)] focus:border-[#ff5f1f]/50 focus:shadow-[0_0_15px_rgba(255,95,31,0.2)] transition-all duration-300 placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Subject" />
               </div>
               
               <div className="group">
-                <textarea id="message" rows="5" required className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.05)] focus:border-[rgba(255,255,255,0.2)] transition-all resize-none placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Your message..."></textarea>
+                <textarea id="message" rows="5" required className="w-full bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f5f5f7] focus:outline-none focus:bg-[rgba(255,255,255,0.04)] focus:border-[#ff5f1f]/50 focus:shadow-[0_0_15px_rgba(255,95,31,0.2)] transition-all duration-300 resize-none placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Your message..."></textarea>
               </div>
               
               <motion.button 
                 type="submit" 
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                className="bg-[#f5f5f7] text-[#050505] py-4 px-8 sm:px-10 rounded-full font-bold tracking-tight hover:bg-white transition-colors duration-300 w-full sm:w-auto self-start mt-2 shadow-[0_0_30px_rgba(255,255,255,0.1)] text-[15px]"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                className="relative overflow-hidden bg-[#f5f5f7] text-[#050505] py-4 px-8 sm:px-10 rounded-full font-bold tracking-tight w-full sm:w-auto self-start mt-2 shadow-[0_4px_24px_-1px_rgba(255,255,255,0.2)] hover:shadow-[0_8px_32px_-4px_rgba(255,255,255,0.4)] text-[15px] transition-all duration-500 group"
               >
-                Send Message
+                <div className="absolute inset-0 bg-gradient-to-r from-[#ff5f1f] via-[#ff3366] to-[#ff8c42] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <span className="relative z-10 group-hover:text-white transition-colors duration-500">Send Message</span>
               </motion.button>
             </form>
           </motion.div>

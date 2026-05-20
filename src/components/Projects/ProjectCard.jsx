@@ -4,21 +4,21 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 export const ProjectCard = ({ project, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      initial={{ opacity: 0, y: 40, scale: 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.25, 1, 0.5, 1] }}
-      whileHover={{ y: -4 }}
-      className="group flex flex-col h-full relative rounded-[24px] sm:rounded-[32px] bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] overflow-hidden hover:border-[rgba(255,255,255,0.1)] transition-colors duration-500"
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -6 }}
+      className="group flex flex-col h-full relative rounded-[24px] sm:rounded-[32px] bg-[rgba(20,20,20,0.4)] border border-[rgba(255,255,255,0.04)] overflow-hidden hover:border-[rgba(255,255,255,0.1)] transition-all duration-700 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_24px_64px_-8px_rgba(0,0,0,0.6),_0_0_40px_rgba(255,95,31,0.1)]"
     >
       {/* Immersive Hover Background Glow (hidden on mobile for performance) */}
-      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-to-tr from-[#ff6b00] to-[#ff4d85] opacity-0 group-hover:opacity-10 mix-blend-screen filter blur-[100px] transition-opacity duration-700 pointer-events-none"></div>
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#ff5f1f]/20 to-[#ff3366]/20 opacity-0 group-hover:opacity-100 mix-blend-screen filter blur-[80px] transition-opacity duration-700 pointer-events-none"></div>
 
       {/* Media Container */}
-      <div className="relative h-56 sm:h-72 md:h-96 w-full overflow-hidden bg-[#000000] p-4 sm:p-6 pb-0 flex items-end justify-center perspective-1000">
+      <div className="relative h-56 sm:h-72 md:h-96 w-full overflow-hidden bg-[#050505] p-4 sm:p-6 pb-0 flex items-end justify-center perspective-1000 z-10">
         
         {/* Apple Style Interface Mockup */}
-        <div className="w-[95%] h-[95%] rounded-t-2xl bg-[#0a0a0a] border border-[rgba(255,255,255,0.1)] border-b-0 shadow-2xl overflow-hidden relative md:group-hover:translate-y-4 md:group-hover:rotate-x-12 transform-style-3d transition-transform duration-700 ease-[0.25,1,0.5,1] flex flex-col origin-bottom">
+        <div className="w-[95%] h-[95%] rounded-t-2xl bg-[#0a0a0a] border border-[rgba(255,255,255,0.08)] border-b-0 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] overflow-hidden relative md:group-hover:translate-y-2 md:group-hover:rotate-x-12 md:group-hover:scale-105 transform-style-3d transition-all duration-700 ease-[0.16,1,0.3,1] flex flex-col origin-bottom">
            
            {/* iOS/macOS Header */}
            <div className="h-6 sm:h-8 border-b border-[rgba(255,255,255,0.05)] bg-[#111] flex items-center px-3 sm:px-4 gap-1.5 sm:gap-2 backdrop-blur-md">
@@ -77,8 +77,8 @@ export const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Content */}
-      <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 relative z-10 backdrop-blur-3xl bg-[rgba(10,10,10,0.8)] border-t border-[rgba(255,255,255,0.05)]">
-        <h3 className="text-2xl sm:text-3xl font-bold text-[#f5f5f7] mb-3 sm:mb-4 tracking-tight md:group-hover:text-transparent md:group-hover:bg-clip-text md:group-hover:bg-gradient-to-r md:group-hover:from-[#ff6b00] md:group-hover:to-[#ff4d85] transition-colors duration-300">{project.title}</h3>
+      <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 relative z-20 backdrop-blur-3xl bg-[rgba(10,10,10,0.6)] border-t border-[rgba(255,255,255,0.03)]">
+        <h3 className="text-2xl sm:text-3xl font-bold text-[#f5f5f7] mb-3 sm:mb-4 tracking-tight md:group-hover:text-transparent md:group-hover:bg-clip-text md:group-hover:bg-gradient-to-r md:group-hover:from-[#ffffff] md:group-hover:via-[#f5f5f7] md:group-hover:to-[#ff8c42] transition-colors duration-500 drop-shadow-sm">{project.title}</h3>
         <p className="text-[#86868b] text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed font-light">
           {project.description}
         </p>
