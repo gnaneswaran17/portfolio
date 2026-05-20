@@ -27,12 +27,23 @@ export const ProjectCard = ({ project, index }) => {
              <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#27c93f]"></div>
            </div>
            
-           {/* Abstract Content */}
-           <div className="flex-1 bg-gradient-to-br from-[#111] to-[#000] relative flex items-center justify-center p-4 sm:p-6 overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,107,0,0.1),transparent_60%)]"></div>
-              <div className="text-[rgba(255,255,255,0.1)] text-5xl sm:text-7xl font-bold tracking-tighter">
-                {project.title.substring(0, 4)}
-              </div>
+           {/* Immersive Mockup Content (Renders high-quality project screenshot if available, otherwise falls back to dynamic abstract styling) */}
+           <div className="flex-1 bg-gradient-to-br from-[#111] to-[#000] relative flex items-center justify-center overflow-hidden">
+             {project.image ? (
+               <img 
+                 src={project.image} 
+                 alt={project.title} 
+                 className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                 loading="lazy"
+               />
+             ) : (
+               <>
+                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,107,0,0.1),transparent_60%)]"></div>
+                 <div className="text-[rgba(255,255,255,0.1)] text-5xl sm:text-7xl font-bold tracking-tighter">
+                   {project.title.substring(0, 4)}
+                 </div>
+               </>
+             )}
            </div>
         </div>
         

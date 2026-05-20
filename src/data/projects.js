@@ -1,3 +1,7 @@
+import employeeSystemImg from '../assets/employee-system.png';
+import stockMarketImg from '../assets/stock-market.png';
+import portfolioCmsImg from '../assets/portfolio-cms.png';
+
 export const projects = [
   {
     id: 1,
@@ -6,7 +10,7 @@ export const projects = [
     tech: ["Java", "Spring Boot", "PostgreSQL"],
     liveLink: "#",
     githubLink: "#",
-    image: "/src/assets/images/projects/employee-system.png"
+    image: employeeSystemImg
   },
   {
     id: 2,
@@ -15,7 +19,7 @@ export const projects = [
     tech: ["Python", "Machine Learning"],
     liveLink: "#",
     githubLink: "#",
-    image: "/src/assets/images/projects/stock-market.png"
+    image: stockMarketImg
   },
   {
     id: 3,
@@ -24,7 +28,7 @@ export const projects = [
     tech: ["React.js", "JavaScript", "AI APIs"],
     liveLink: "#",
     githubLink: "#",
-    image: "/src/assets/images/projects/ai-business.png"
+    image: null
   },
   {
     id: 4,
@@ -33,6 +37,6 @@ export const projects = [
     tech: ["React.js", "Sanity CMS"],
     liveLink: "#",
     githubLink: "#",
-    image: "/src/assets/images/projects/portfolio-cms.png"
+    image: portfolioCmsImg
   }
 ];
