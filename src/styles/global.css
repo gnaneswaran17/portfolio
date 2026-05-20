@@ -1,0 +1,109 @@
+@layer utilities {
+  .glass {
+    background-color: var(--glass-bg);
+    backdrop-filter: saturate(180%) blur(40px);
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-card {
+    background-color: var(--glass-bg);
+    backdrop-filter: saturate(180%) blur(40px);
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .glass-card:hover {
+    background-color: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 40px var(--glow-subtle), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .glass-pill {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+  }
+
+  .text-gradient-aurora {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, var(--aurora-orange) 0%, var(--aurora-pink) 50%, var(--aurora-peach) 100%);
+    background-size: 200% auto;
+    animation: gradient-flow 5s ease infinite alternate;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  font-family: var(--font-apple);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.015em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+}
+
+/* Fluid Typography Utilities */
+.text-fluid-hero {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.text-fluid-h3 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.text-fluid-p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Optimize blur and animations on mobile */
+@media (max-width: 768px) {
+  .animate-aurora-1, .animate-aurora-2, .animate-aurora-3 {
+    filter: blur(80px); /* Reduced blur for performance */
+    opacity: 0.2;
+  }
+}
+
+::selection {
+  background-color: rgba(255, 107, 0, 0.4);
+  color: #fff;
+}
+
+/* Elegant Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}

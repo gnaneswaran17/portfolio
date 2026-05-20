@@ -1,0 +1,46 @@
+/* Cinematic Aurora Animations */
+@keyframes aurora-flow-1 {
+  0% { transform: translate(0px, 0px) scale(1) rotate(0deg); opacity: 0.3; }
+  33% { transform: translate(5vw, -10vh) scale(1.2) rotate(45deg); opacity: 0.4; }
+  66% { transform: translate(-5vw, 5vh) scale(0.9) rotate(-15deg); opacity: 0.3; }
+  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); opacity: 0.3; }
+}
+
+@keyframes aurora-flow-2 {
+  0% { transform: translate(0px, 0px) scale(1) rotate(0deg); opacity: 0.2; }
+  50% { transform: translate(-10vw, 15vh) scale(1.3) rotate(-30deg); opacity: 0.35; }
+  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); opacity: 0.2; }
+}
+
+@keyframes aurora-flow-3 {
+  0% { transform: translate(0px, 0px) scale(0.8) rotate(0deg); opacity: 0.25; }
+  50% { transform: translate(15vw, 10vh) scale(1.1) rotate(60deg); opacity: 0.4; }
+  100% { transform: translate(0px, 0px) scale(0.8) rotate(0deg); opacity: 0.25; }
+}
+
+.animate-aurora-1 {
+  animation: aurora-flow-1 25s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-aurora-2 {
+  animation: aurora-flow-2 30s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+.animate-aurora-3 {
+  animation: aurora-flow-3 35s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate-reverse;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}

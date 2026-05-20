@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "./styles/variables.css";
+@import "./styles/global.css";
+@import "./styles/animations.css";
+
+@theme {
+  --color-background: var(--bg-primary);
+  --color-secondary-bg: var(--bg-secondary);
+  --color-accent: var(--accent);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: #e2e8f0;
+  }
+}
