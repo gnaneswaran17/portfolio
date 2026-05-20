@@ -30,7 +30,7 @@ export const Projects = () => {
         
         <div className="mt-16 md:mt-24 text-center">
           <motion.a
-            href="https://github.com"
+            href="https://github.com/gnaneswaran17"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
