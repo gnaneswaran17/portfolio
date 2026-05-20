@@ -64,16 +64,11 @@ export const Navbar = () => {
               className="flex items-center gap-3.5 md:gap-4 group relative"
             >
               {/* Premium Ambient Background Glow */}
-              <div className="absolute top-1/2 left-6 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 bg-gradient-to-tr from-[#ff5f1f]/35 to-[#ff3366]/35 rounded-full blur-[24px] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none z-0"></div>
+              <div className="absolute top-1/2 left-6 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-[#ff5f1f]/35 to-[#ff3366]/35 rounded-full blur-[20px] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none z-0"></div>
               
-              {/* Premium iOS-Style Glass Container for Logo */}
-              <div className="relative w-12 h-12 md:w-[54px] md:h-[54px] flex items-center justify-center rounded-[14px] md:rounded-[16px] bg-gradient-to-b from-[rgba(25,25,25,0.8)] to-[rgba(10,10,10,0.9)] backdrop-blur-xl border border-[rgba(255,255,255,0.12)] shadow-[0_4px_20px_rgba(255,95,31,0.3),_inset_0_1px_1px_rgba(255,255,255,0.2)] group-hover:shadow-[0_8px_30px_rgba(255,95,31,0.5),_inset_0_1px_2px_rgba(255,255,255,0.3)] transition-all duration-500 overflow-hidden flex-shrink-0 z-10">
-                {/* iOS Glossy Reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-[rgba(255,255,255,0.25)] pointer-events-none z-20 mix-blend-overlay"></div>
-                <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-[rgba(255,255,255,0.15)] to-transparent pointer-events-none z-20"></div>
-                
-                {/* The 3D Logo (Massive Scale inside Container) */}
-                <img src={logo} alt="Gnaneswaran Logo" className="relative z-10 w-[85%] h-[85%] md:w-[88%] md:h-[88%] object-contain drop-shadow-[0_2px_10px_rgba(255,95,31,0.5)] group-hover:drop-shadow-[0_4px_16px_rgba(255,95,31,0.8)] group-hover:scale-105 transition-all duration-500" />
+              {/* Floating Freeform 3D Logo */}
+              <div className="relative w-10 h-10 md:w-[46px] md:h-[46px] flex items-center justify-center transition-all duration-500 flex-shrink-0 z-10">
+                <img src={logo} alt="Gnaneswaran Logo" className="relative z-10 w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(255,95,31,0.4)] group-hover:drop-shadow-[0_8px_20px_rgba(255,95,31,0.6)] group-hover:scale-110 transition-all duration-500" />
               </div>
 
               {/* Text Area */}
