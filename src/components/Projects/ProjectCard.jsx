@@ -49,22 +49,30 @@ export const ProjectCard = ({ project, index }) => {
         
         {/* Floating Action Buttons */}
         <div className="absolute top-4 sm:top-6 right-4 sm:right-6 flex gap-2 sm:gap-3 z-10 translate-y-0 opacity-100 md:translate-y-[-20px] md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
-          <motion.a 
-            href={project.githubLink} 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 sm:w-12 sm:h-12 glass-pill flex items-center justify-center text-white hover:bg-[rgba(255,255,255,0.1)] transition-colors duration-300 backdrop-blur-xl shadow-lg"
-          >
-            <FaGithub size={18} className="sm:w-[20px]" />
-          </motion.a>
-          <motion.a 
-            href={project.liveLink} 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-10 h-10 sm:w-12 sm:h-12 glass-pill flex items-center justify-center text-white hover:bg-[rgba(255,255,255,0.1)] transition-colors duration-300 backdrop-blur-xl shadow-lg"
-          >
-            <FaExternalLinkAlt size={16} className="sm:w-[18px]" />
-          </motion.a>
+          {project.githubLink && (
+            <motion.a 
+              href={project.githubLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 sm:w-12 sm:h-12 glass-pill flex items-center justify-center text-white hover:bg-[rgba(255,255,255,0.1)] transition-colors duration-300 backdrop-blur-xl shadow-lg"
+            >
+              <FaGithub size={18} className="sm:w-[20px]" />
+            </motion.a>
+          )}
+          {project.liveLink && (
+            <motion.a 
+              href={project.liveLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-10 h-10 sm:w-12 sm:h-12 glass-pill flex items-center justify-center text-white hover:bg-[rgba(255,255,255,0.1)] transition-colors duration-300 backdrop-blur-xl shadow-lg"
+            >
+              <FaExternalLinkAlt size={16} className="sm:w-[18px]" />
+            </motion.a>
+          )}
         </div>
       </div>
 
