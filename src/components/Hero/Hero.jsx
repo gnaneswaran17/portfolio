@@ -1,127 +1,138 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-scroll';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 export const Hero = () => {
-  const roles = ["Full Stack Developer.", "Problem Solver.", "UI/UX Enthusiast.", "Trader."];
-  const [currentRole, setCurrentRole] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-10 md:pt-24 md:pb-16 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10 flex flex-col items-center justify-center text-center">
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="w-full max-w-5xl mx-auto flex flex-col items-center relative"
+    <section id="home" className="min-h-screen relative flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-[#05070A] font-['Space_Grotesk',_sans-serif]">
+      {/* Background Engine */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Animated Thin Grid */}
+        <div 
+          className="absolute inset-0 opacity-[0.25]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0v1H0V0h40zM0 40V0h1v40H0z' fill='%2300D9FF' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
+          }}
         >
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1.2 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill mb-6 md:mb-8 hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-default border-[rgba(255,255,255,0.15)] shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f1f] animate-[pulse_3s_cubic-bezier(0.16,1,0.3,1)_infinite] shadow-[0_0_10px_rgba(255,95,31,0.8)]"></span>
-            <span className="text-[#f5f5f7] text-[10px] md:text-xs font-semibold uppercase tracking-widest opacity-90">Available for new opportunities</span>
-          </motion.div>
+          {/* Vignettes for cinematic edges */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#05070A] via-transparent to-[#05070A] opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05070A] via-transparent to-[#05070A] opacity-90"></div>
+        </div>
 
-          <div className="relative">
-            {/* Cinematic text bloom behind headline */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff5f1f]/30 via-[#ff3366]/30 to-[#ff8c42]/30 blur-[60px] md:blur-[100px] rounded-full opacity-60 pointer-events-none -z-10"></div>
-            <h1 className="text-fluid-hero font-bold mb-2 tracking-tighter leading-none px-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-[#f5f5f7] to-[#a0a0a5] drop-shadow-sm">
-              Gnaneswaran A.
-            </h1>
-          </div>
+        {/* Ambient Glows */}
+        <div className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] bg-[#00D9FF] rounded-full mix-blend-screen filter blur-[150px] opacity-[0.12] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-[20%] right-[-10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] bg-[#6E3BFF] rounded-full mix-blend-screen filter blur-[150px] opacity-[0.15] pointer-events-none animate-[pulse_8s_ease-in-out_infinite_reverse]"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        {/* Badge */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[rgba(0,255,255,0.15)] bg-gradient-to-r from-[rgba(0,255,255,0.05)] to-transparent backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(0,217,255,0.1)]"
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FFB2] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00FFB2] shadow-[0_0_8px_#00FFB2]"></span>
+          </span>
+          <span className="text-[#00D9FF] text-xs font-bold tracking-[0.1em] uppercase drop-shadow-[0_0_5px_rgba(0,217,255,0.5)]">System Active: V 4.0.9</span>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          className="max-w-[1000px] mx-auto"
+        >
+          <h1 className="text-[54px] sm:text-[70px] md:text-[90px] lg:text-[110px] font-extrabold leading-[0.95] tracking-tighter text-white mb-6">
+            Elite Security for <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D9FF] to-[#00FFB2] drop-shadow-[0_0_30px_rgba(0,255,178,0.25)]">
+              The Future.
+            </span>
+          </h1>
           
-          <div className="text-fluid-h3 font-bold tracking-tighter h-[50px] sm:h-[60px] md:h-[80px] lg:h-[100px] overflow-hidden flex items-center justify-center w-full mb-6 px-4">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentRole}
-                initial={{ y: 50, opacity: 0, filter: "blur(12px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                exit={{ y: -50, opacity: 0, filter: "blur(12px)" }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-gradient-aurora whitespace-nowrap py-2 drop-shadow-sm"
-              >
-                {roles[currentRole]}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-          
-          <p className="text-[#86868b] text-fluid-p max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-normal tracking-tight px-4">
-            I craft cinematic digital experiences and scalable backend architectures. Engineering the future, one pixel at a time.
+          <p className="text-[#86868b] text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed tracking-tight font-medium">
+            Military-grade threat detection and AI-driven telemetry. Monitor, analyze, and neutralize vulnerabilities before they happen.
           </p>
+        </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 justify-center w-full px-6 sm:px-0">
-            <Link
-              to="projects"
-              smooth={true}
-              duration={800}
-              offset={-100}
-              className="w-full sm:w-auto"
-            >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="cursor-pointer relative group overflow-hidden rounded-full w-full shadow-[0_8px_32px_-4px_rgba(255,95,31,0.4)] hover:shadow-[0_16px_48px_-8px_rgba(255,95,31,0.6)] transition-all duration-500"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#ff5f1f] via-[#ff3366] to-[#ff8c42] transition-transform duration-700 ease-out group-hover:scale-105"></div>
-                {/* Subtle shine effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative px-8 py-4 bg-transparent text-white font-semibold text-[15px] flex items-center justify-center gap-2 tracking-tight">
-                  View My Work
-                </div>
-              </motion.div>
-            </Link>
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row gap-5 items-center justify-center mb-24 w-full"
+        >
+          <button className="w-full sm:w-auto px-10 py-4 rounded-xl bg-[#00D9FF] text-black font-bold text-[16px] shadow-[0_0_30px_rgba(0,217,255,0.3)] hover:shadow-[0_0_45px_rgba(0,217,255,0.5)] hover:bg-[#20e3ff] transition-all duration-300 transform hover:-translate-y-1">
+            Start Free Trial
+          </button>
+          
+          <button className="w-full sm:w-auto px-10 py-4 rounded-xl bg-[rgba(255,255,255,0.02)] backdrop-blur-md border border-[rgba(255,255,255,0.1)] text-white font-semibold text-[16px] hover:bg-[rgba(255,255,255,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(255,255,255,0.2)] hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+            View Documentation
+          </button>
+        </motion.div>
+
+        {/* Dashboard Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 80, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full max-w-6xl mx-auto relative group"
+        >
+          {/* Ambient Glow behind dashboard */}
+          <div className="absolute inset-0 bg-[#00D9FF]/20 blur-[100px] md:blur-[140px] rounded-full group-hover:bg-[#00D9FF]/25 transition-all duration-1000 pointer-events-none z-0"></div>
+          
+          <div className="relative z-10 w-full rounded-2xl md:rounded-[32px] border border-[rgba(0,255,255,0.12)] bg-gradient-to-b from-[rgba(0,255,255,0.06)] to-[rgba(255,255,255,0.01)] backdrop-blur-2xl p-3 md:p-5 shadow-[0_30px_80px_rgba(0,0,0,0.6),_inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden transform-gpu hover:scale-[1.01] transition-transform duration-700">
+            {/* Dashboard Mockup Header */}
+            <div className="flex items-center gap-2 mb-5 px-4 pt-2">
+              <div className="w-3 h-3 rounded-full bg-[#ff3366]/70 border border-[#ff3366]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffb580]/70 border border-[#ffb580]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#00FFB2]/70 border border-[#00FFB2]"></div>
+              <div className="ml-4 h-6 w-48 bg-white/5 rounded-md border border-white/5"></div>
+              <div className="ml-auto h-6 w-20 bg-[rgba(0,217,255,0.1)] rounded-md border border-[rgba(0,217,255,0.2)]"></div>
+            </div>
             
-            <motion.a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="w-full sm:w-auto cursor-pointer glass-pill px-8 py-4 text-[15px] font-semibold text-white hover:bg-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.2)] transition-all duration-500 flex items-center justify-center gap-2 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4)] tracking-tight"
-            >
-              Download Resume
-            </motion.a>
-          </div>
-
-          <div className="flex items-center gap-8 mt-12 md:mt-16 justify-center">
-            <motion.a 
-              href="https://github.com/gnaneswaran17" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              whileHover={{ scale: 1.15, y: -4 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="text-[#86868b] hover:text-white transition-colors text-2xl md:text-3xl"
-            >
-              <FaGithub />
-            </motion.a>
-            <motion.a 
-              href="https://www.linkedin.com/in/gnaneswarana/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              whileHover={{ scale: 1.15, y: -4 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="text-[#86868b] hover:text-white transition-colors text-2xl md:text-3xl"
-            >
-              <FaLinkedin />
-            </motion.a>
+            {/* Mockup Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 h-[350px] md:h-[500px]">
+              {/* Main Chart Area */}
+              <div className="col-span-1 md:col-span-2 bg-[#05070A]/80 rounded-xl border border-[rgba(255,255,255,0.03)] flex flex-col p-6 relative overflow-hidden shadow-[inset_0_0_40px_rgba(0,0,0,0.5)]">
+                <div className="h-6 w-40 bg-white/10 rounded mb-8"></div>
+                {/* Fake Chart Lines */}
+                <div className="flex-1 w-full flex items-end gap-2 px-2 mt-auto">
+                  <div className="w-1/6 h-[30%] bg-gradient-to-t from-[#00D9FF]/20 to-[#00D9FF]/5 rounded-t-sm border-t border-[#00D9FF]/40"></div>
+                  <div className="w-1/6 h-[50%] bg-gradient-to-t from-[#00D9FF]/20 to-[#00D9FF]/5 rounded-t-sm border-t border-[#00D9FF]/40"></div>
+                  <div className="w-1/6 h-[40%] bg-gradient-to-t from-[#00D9FF]/20 to-[#00D9FF]/5 rounded-t-sm border-t border-[#00D9FF]/40"></div>
+                  <div className="w-1/6 h-[70%] bg-gradient-to-t from-[#00D9FF]/30 to-[#00D9FF]/10 rounded-t-sm border-t border-[#00D9FF]/60 relative">
+                     <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#00D9FF] rounded-full shadow-[0_0_15px_#00D9FF]"></div>
+                  </div>
+                  <div className="w-1/6 h-[60%] bg-gradient-to-t from-[#00D9FF]/20 to-[#00D9FF]/5 rounded-t-sm border-t border-[#00D9FF]/40"></div>
+                  <div className="w-1/6 h-[85%] bg-gradient-to-t from-[#00FFB2]/30 to-[#00FFB2]/10 rounded-t-sm border-t border-[#00FFB2]/60 relative">
+                     <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#00FFB2] rounded-full shadow-[0_0_15px_#00FFB2]"></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Side Metric Cards */}
+              <div className="flex flex-col gap-5">
+                <div className="flex-1 bg-[#05070A]/80 rounded-xl border border-[#00FFB2]/20 p-6 shadow-[inset_0_0_30px_rgba(0,255,178,0.05)] relative overflow-hidden flex flex-col justify-center">
+                  <div className="h-5 w-28 bg-white/10 rounded mb-4 z-10 relative"></div>
+                  <div className="text-[40px] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#00FFB2] to-[#00D9FF] z-10 relative drop-shadow-[0_0_10px_rgba(0,255,178,0.3)]">99.99%</div>
+                  <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-[#00FFB2]/20 blur-[40px] rounded-full pointer-events-none"></div>
+                </div>
+                <div className="flex-1 bg-[#05070A]/80 rounded-xl border border-[#6E3BFF]/20 p-6 shadow-[inset_0_0_30px_rgba(110,59,255,0.05)] relative overflow-hidden flex flex-col justify-center">
+                  <div className="h-5 w-24 bg-white/10 rounded mb-4 z-10 relative"></div>
+                  <div className="text-[40px] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#6E3BFF] to-[#00D9FF] z-10 relative drop-shadow-[0_0_10px_rgba(110,59,255,0.3)]">12.4M</div>
+                  <div className="absolute -left-8 -top-8 w-32 h-32 bg-[#6E3BFF]/20 blur-[40px] rounded-full pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Glossy Edge Highlight */}
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(0,255,255,0.4)] to-transparent opacity-50"></div>
           </div>
         </motion.div>
+        
       </div>
     </section>
   );
