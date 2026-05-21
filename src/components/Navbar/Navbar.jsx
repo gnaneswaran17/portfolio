@@ -182,16 +182,12 @@ export const Navbar = () => {
                 }`}
               >
                 {/* Active Indicator Background */}
-                {activeItem === link.path && isScrolled && (
+                {activeItem === link.path && (
                   <motion.div
                     layoutId="activeNavIndicator"
                     className="absolute inset-0 bg-gradient-to-r from-[rgba(0,217,255,0.15)] to-[rgba(110,59,255,0.15)] rounded-full -z-10 shadow-[0_0_12px_rgba(0,217,255,0.2)]"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
-                )}
-                {/* Underline for non-scrolled state */}
-                {!isScrolled && activeItem !== link.path && (
-                  <span className="absolute -bottom-1 left-4 right-4 h-[2px] bg-gradient-to-r from-[#00D9FF] to-[#6E3BFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 )}
                 <span className="relative z-10 transition-colors duration-300">{link.title}</span>
               </Link>
