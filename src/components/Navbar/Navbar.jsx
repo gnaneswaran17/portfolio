@@ -79,7 +79,8 @@ export const Navbar = () => {
                     animate={{ opacity: 1, width: "auto" }}
                     exit={{ opacity: 0, width: 0 }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    className="font-['SF_Pro_Display',_system-ui,_-apple-system,_sans-serif] font-semibold tracking-[0.01em] text-[19px] md:text-[22px] whitespace-nowrap overflow-hidden bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] via-[#f5f5f7] to-[#ffb580] drop-shadow-sm transition-all duration-500 leading-tight"
+                    style={{ WebkitFontSmoothing: "antialiased", MozOsxFontSmoothing: "grayscale" }}
+                    className="font-['Space_Grotesk',_sans-serif] font-bold tracking-[-0.03em] text-[22px] md:text-[26px] whitespace-nowrap overflow-hidden bg-clip-text text-transparent bg-gradient-to-br from-[#ffffff] via-[#fff0e5] to-[#ff8c42] drop-shadow-[0_2px_12px_rgba(255,95,31,0.5)] transition-all duration-500 leading-tight"
                   >
                     Gnaneswaran
                   </motion.span>
