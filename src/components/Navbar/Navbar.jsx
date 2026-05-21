@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import logo from '../../assets/logo.png';
+import { GlassButton } from '../ui/GlassButton';
 
 const navLinks = [
   { title: 'Home', path: 'home' },
@@ -138,11 +139,15 @@ export const Navbar = () => {
                 smooth={true}
                 duration={800}
                 offset={-100}
-                className="cursor-pointer relative overflow-hidden group px-6 py-2 rounded-full text-[14px] font-semibold flex items-center justify-center bg-[rgba(8,12,18,0.72)] text-white border border-[rgba(0,255,255,0.1)] hover:bg-[rgba(0,217,255,0.05)] hover:border-[rgba(0,255,255,0.3)] transition-colors duration-500 shadow-[0_0_15px_rgba(0,255,255,0.05)] hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] backdrop-blur-[12px]"
+                className="w-full"
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.2)] to-transparent opacity-50"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,217,255,0.2)] to-[rgba(0,255,178,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <span className="relative z-10 drop-shadow-sm">Hire Me</span>
+                <GlassButton 
+                  size="sm" 
+                  glassColor="rgba(0, 217, 255, 0.15)" 
+                  contentClassName="text-[#00D9FF] font-bold"
+                >
+                  Hire Me
+                </GlassButton>
               </Link>
             </motion.div>
           </div>
@@ -218,9 +223,16 @@ export const Navbar = () => {
                   duration={800}
                   offset={-100}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#00D9FF] to-[#00C2FF] text-[#05070A] text-lg font-bold flex items-center justify-center shadow-[0_0_40px_rgba(0,217,255,0.35)] active:scale-95 transition-transform transform-gpu"
+                  className="w-full block"
                 >
-                  Hire Me
+                  <GlassButton 
+                    className="w-full" 
+                    size="lg" 
+                    glassColor="rgba(0, 217, 255, 0.15)"
+                    contentClassName="text-[#00D9FF] font-bold text-lg"
+                  >
+                    Hire Me
+                  </GlassButton>
                 </Link>
               </motion.div>
             </div>

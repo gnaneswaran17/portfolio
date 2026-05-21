@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import { GlassButton } from '../ui/GlassButton';
 
 export const Contact = () => {
   return (
@@ -98,16 +99,15 @@ export const Contact = () => {
                 <textarea id="message" rows="5" required className="w-full bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-[16px] sm:rounded-2xl px-4 sm:px-5 py-3.5 sm:py-4 text-[#f3f7ff] focus:outline-none focus:bg-[rgba(255,255,255,0.04)] focus:border-[#00D9FF]/50 focus:shadow-[0_0_15px_rgba(0,217,255,0.2)] transition-all duration-300 resize-none placeholder:text-[#86868b] font-medium text-[15px]" placeholder="Your message..."></textarea>
               </div>
               
-              <motion.button 
+              <GlassButton 
                 type="submit" 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="relative overflow-hidden bg-[rgba(0,217,255,0.1)] border border-[#00D9FF] text-[#00D9FF] py-4 px-8 sm:px-10 rounded-full font-bold tracking-tight w-full sm:w-auto self-start mt-2 shadow-[0_0_20px_rgba(0,217,255,0.15)] hover:shadow-[0_0_30px_rgba(0,217,255,0.3)] text-[15px] transition-all duration-500 group"
+                className="w-full sm:w-auto self-start mt-2"
+                size="lg"
+                glassColor="rgba(0, 217, 255, 0.15)"
+                contentClassName="text-[#00D9FF] drop-shadow-[0_0_8px_rgba(0,217,255,0.8)] font-bold tracking-wide"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                <span className="relative z-10 group-hover:text-[#05070A] transition-colors duration-500">Send Message</span>
-              </motion.button>
+                Send Message
+              </GlassButton>
             </form>
           </motion.div>
         </div>
