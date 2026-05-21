@@ -66,63 +66,30 @@ export const Navbar = () => {
 
       <style>{`
         .nav-liquid {
+          --glass-reflex-light: 1;
+          --glass-reflex-dark: 1;
           color: white;
         }
 
         .nav-liquid-lens {
-          background-color: rgba(5, 5, 10, 0.4);
-          backdrop-filter: blur(24px) saturate(150%);
-          -webkit-backdrop-filter: blur(24px) saturate(150%);
+          background-color: rgba(10, 15, 25, 0.25);
+          backdrop-filter: blur(16px) url(#liquid-glass-nav-${filterId}) saturate(180%);
+          -webkit-backdrop-filter: blur(16px) saturate(180%);
+          
+          box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, white calc(var(--glass-reflex-light) * 10%), transparent),
+            inset 1.8px 3px 0px -2px color-mix(in srgb, white calc(var(--glass-reflex-light) * 90%), transparent), 
+            inset -2px -2px 0px -2px color-mix(in srgb, white calc(var(--glass-reflex-light) * 80%), transparent), 
+            inset -3px -8px 1px -6px color-mix(in srgb, white calc(var(--glass-reflex-light) * 60%), transparent), 
+            inset -0.3px -1px 4px 0px color-mix(in srgb, black calc(var(--glass-reflex-dark) * 12%), transparent), 
+            inset -1.5px 2.5px 0px -2px color-mix(in srgb, black calc(var(--glass-reflex-dark) * 20%), transparent), 
+            inset 0px 3px 4px -2px color-mix(in srgb, black calc(var(--glass-reflex-dark) * 20%), transparent), 
+            inset 2px -6.5px 1px -4px color-mix(in srgb, black calc(var(--glass-reflex-dark) * 10%), transparent), 
+            0px 1px 5px 0px color-mix(in srgb, black calc(var(--glass-reflex-dark) * 10%), transparent), 
+            0px 6px 16px 0px color-mix(in srgb, black calc(var(--glass-reflex-dark) * 8%), transparent),
+            0 10px 40px -10px rgba(0, 0, 0, 0.4); 
+            
           transition: all 400ms cubic-bezier(1, 0.0, 0.4, 1);
-          box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Glowing Border and Edge Highlights */
-        .nav-glowing-border {
-          position: absolute;
-          inset: 0;
-          border-radius: inherit;
-          padding: 1px; /* border thickness */
-          background: linear-gradient(90deg, rgba(0,217,255,0.8) 0%, rgba(255,255,255,0.1) 50%, rgba(170,85,255,0.8) 100%);
-          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          pointer-events: none;
-        }
-
-        /* Left Cyan Highlight Bloom */
-        .nav-bloom-left {
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 20%;
-          background: linear-gradient(90deg, rgba(0,217,255,0.4) 0%, transparent 100%);
-          border-radius: inherit;
-          filter: blur(8px);
-          pointer-events: none;
-        }
-
-        /* Right Purple Highlight Bloom */
-        .nav-bloom-right {
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          width: 20%;
-          background: linear-gradient(-90deg, rgba(170,85,255,0.4) 0%, transparent 100%);
-          border-radius: inherit;
-          filter: blur(8px);
-          pointer-events: none;
-        }
-
-        /* Inner subtle shadow for depth */
-        .nav-inner-shadow {
-          position: absolute;
-          inset: 0;
-          border-radius: inherit;
-          box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.05), inset 0 -2px 10px rgba(0, 0, 0, 0.2);
-          pointer-events: none;
         }
 
         .nav-link-item {
@@ -149,10 +116,6 @@ export const Navbar = () => {
         >
           {/* ISOLATED BACKGROUND LENS FOR NAVBAR */}
           <span className="nav-liquid-lens absolute inset-0 -z-10 rounded-[inherit] pointer-events-none" />
-          <span className="nav-glowing-border z-0" />
-          <span className="nav-bloom-left z-0" />
-          <span className="nav-bloom-right z-0" />
-          <span className="nav-inner-shadow z-0" />
 
           {/* INTERNAL CONTENT CONTAINER */}
           <div className="relative z-10 w-full flex items-center justify-between gap-4 md:gap-8">
@@ -221,7 +184,7 @@ export const Navbar = () => {
                 {activeItem === link.path && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 bg-[rgba(0,217,255,0.1)] rounded-full -z-10 border border-[rgba(0,217,255,0.2)] shadow-[inset_0_0_12px_rgba(0,217,255,0.1)]"
+                    className="absolute inset-0 bg-[rgba(255,255,255,0.08)] rounded-full -z-10 border border-[rgba(255,255,255,0.15)] shadow-[inset_0_0_12px_rgba(255,255,255,0.05)]"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -237,10 +200,9 @@ export const Navbar = () => {
                 offset={-100}
                 className="w-full relative group block rounded-full"
               >
-                {/* Thin glowing border for button */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[rgba(170,85,255,0.8)] to-[rgba(0,217,255,0.8)] opacity-50 group-hover:opacity-100 blur-[2px] transition-opacity duration-300"></div>
-                <div className="relative px-5 py-2 rounded-full bg-[rgba(5,5,10,0.8)] border border-[rgba(255,255,255,0.1)] backdrop-blur-md overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#AA55FF]/10 to-[#00D9FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.2)] opacity-0 group-hover:opacity-100 blur-[2px] transition-opacity duration-300"></div>
+                <div className="relative px-5 py-2 rounded-full bg-[rgba(15,15,25,0.4)] border border-[rgba(255,255,255,0.15)] backdrop-blur-md overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                  <div className="absolute inset-0 bg-[rgba(255,255,255,0.05)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 text-[#f3f7ff] font-medium text-[14px] flex items-center gap-2">
                     Hire Me
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
@@ -327,9 +289,9 @@ export const Navbar = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full relative group block rounded-full"
                 >
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[rgba(170,85,255,0.8)] to-[rgba(0,217,255,0.8)] opacity-50 group-hover:opacity-100 blur-[2px] transition-opacity duration-300"></div>
-                  <div className="relative px-6 py-4 rounded-full bg-[rgba(5,5,10,0.8)] border border-[rgba(255,255,255,0.1)] backdrop-blur-md overflow-hidden text-center">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#AA55FF]/10 to-[#00D9FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.2)] opacity-0 group-hover:opacity-100 blur-[2px] transition-opacity duration-300"></div>
+                  <div className="relative px-6 py-4 rounded-full bg-[rgba(15,15,25,0.4)] border border-[rgba(255,255,255,0.15)] backdrop-blur-md overflow-hidden text-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                    <div className="absolute inset-0 bg-[rgba(255,255,255,0.05)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="relative z-10 text-[#f3f7ff] font-medium text-[16px] flex items-center justify-center gap-2">
                       Hire Me
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
