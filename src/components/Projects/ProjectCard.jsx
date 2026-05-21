@@ -9,10 +9,12 @@ export const ProjectCard = ({ project, index }) => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -6 }}
-      className="group flex flex-col h-full relative rounded-[24px] sm:rounded-[32px] bg-[rgba(20,20,20,0.4)] border border-[rgba(255,255,255,0.04)] overflow-hidden hover:border-[rgba(255,255,255,0.1)] transition-all duration-700 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_24px_64px_-8px_rgba(0,0,0,0.6),_0_0_40px_rgba(255,95,31,0.1)]"
+      className="group flex flex-col h-full relative rounded-[24px] sm:rounded-[32px] bg-[rgba(8,12,18,0.72)] backdrop-blur-[12px] border border-[rgba(0,255,255,0.1)] overflow-hidden hover:border-[rgba(0,255,255,0.3)] transition-all duration-700 shadow-[0_0_30px_rgba(0,255,255,0.08)] hover:shadow-[0_0_50px_rgba(0,255,255,0.15)]"
     >
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.1)] to-transparent opacity-30"></div>
+      
       {/* Immersive Hover Background Glow (hidden on mobile for performance) */}
-      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#ff5f1f]/20 to-[#ff3366]/20 opacity-0 group-hover:opacity-100 mix-blend-screen filter blur-[80px] transition-opacity duration-700 pointer-events-none"></div>
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-[#00D9FF]/20 to-[#6E3BFF]/20 opacity-0 group-hover:opacity-100 mix-blend-screen filter blur-[80px] transition-opacity duration-700 pointer-events-none"></div>
 
       {/* Media Container */}
       <div className="relative h-56 sm:h-72 md:h-96 w-full overflow-hidden bg-[#050505] p-4 sm:p-6 pb-0 flex items-end justify-center perspective-1000 z-10">
@@ -38,7 +40,7 @@ export const ProjectCard = ({ project, index }) => {
                />
              ) : (
                <>
-                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,107,0,0.1),transparent_60%)]"></div>
+                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,217,255,0.15),transparent_60%)]"></div>
                  <div className="text-[rgba(255,255,255,0.1)] text-5xl sm:text-7xl font-bold tracking-tighter">
                    {project.title.substring(0, 4)}
                  </div>
@@ -77,8 +79,8 @@ export const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Content */}
-      <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 relative z-20 backdrop-blur-3xl bg-[rgba(10,10,10,0.6)] border-t border-[rgba(255,255,255,0.03)]">
-        <h3 className="text-2xl sm:text-3xl font-bold text-[#f5f5f7] mb-3 sm:mb-4 tracking-tight md:group-hover:text-transparent md:group-hover:bg-clip-text md:group-hover:bg-gradient-to-r md:group-hover:from-[#ffffff] md:group-hover:via-[#f5f5f7] md:group-hover:to-[#ff8c42] transition-colors duration-500 drop-shadow-sm">{project.title}</h3>
+      <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-1 relative z-20 backdrop-blur-3xl bg-[rgba(8,12,18,0.4)] border-t border-[rgba(0,255,255,0.05)]">
+        <h3 className="text-2xl sm:text-3xl font-['Space_Grotesk',_sans-serif] font-bold text-[#f3f7ff] mb-3 sm:mb-4 tracking-tight md:group-hover:text-transparent md:group-hover:bg-clip-text md:group-hover:bg-gradient-to-r md:group-hover:from-[#00D9FF] md:group-hover:via-[#00FFB2] md:group-hover:to-[#6E3BFF] transition-colors duration-500 drop-shadow-sm">{project.title}</h3>
         <p className="text-[#86868b] text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed font-light">
           {project.description}
         </p>
@@ -87,7 +89,7 @@ export const ProjectCard = ({ project, index }) => {
           {project.tech.map((tech, i) => (
             <span 
               key={i} 
-              className="px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-[#f5f5f7] bg-[rgba(255,255,255,0.05)] rounded-full border border-[rgba(255,255,255,0.05)]"
+              className="px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-[#00D9FF] bg-[rgba(0,217,255,0.05)] rounded-full border border-[rgba(0,255,255,0.15)]"
             >
               {tech}
             </span>

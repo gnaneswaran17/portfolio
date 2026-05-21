@@ -13,7 +13,7 @@ export const Certifications = () => {
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
           className="mb-12 md:mb-20 text-center"
         >
-          <h2 className="text-fluid-h2 font-bold text-[#f5f5f7] mb-4 md:mb-6 tracking-tighter">
+          <h2 className="text-fluid-h2 font-['Space_Grotesk',_sans-serif] font-extrabold text-[#f3f7ff] mb-4 md:mb-6 tracking-tighter">
             Credentials
           </h2>
           <p className="text-[#86868b] text-fluid-p font-light">
@@ -30,16 +30,16 @@ export const Certifications = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 1, 0.5, 1] }}
               whileHover={{ y: -4 }}
-              className="glass-card p-5 sm:p-6 rounded-[24px] sm:rounded-[28px] flex items-center gap-4 sm:gap-5 group hover:bg-[rgba(255,255,255,0.06)] transition-all duration-300 relative overflow-hidden"
+              className="glass-card p-5 sm:p-6 rounded-[24px] sm:rounded-[28px] flex items-center gap-4 sm:gap-5 group hover:bg-[rgba(0,217,255,0.05)] hover:border-[rgba(0,255,255,0.3)] transition-all duration-300 relative overflow-hidden shadow-[0_0_15px_rgba(0,255,255,0.05)] hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] bg-[rgba(8,12,18,0.72)] border border-[rgba(0,255,255,0.1)] backdrop-blur-md"
             >
-              <div className="absolute top-0 right-0 w-20 h-20 sm:w-24 sm:h-24 bg-[#ff6b00] mix-blend-screen filter blur-[40px] opacity-0 md:group-hover:opacity-15 transition-opacity duration-500 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-20 h-20 sm:w-24 sm:h-24 bg-[#00D9FF] mix-blend-screen filter blur-[40px] opacity-0 md:group-hover:opacity-15 transition-opacity duration-500 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
               
-              <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.05)] text-[#f5f5f7] flex items-center justify-center text-lg sm:text-xl shadow-inner md:group-hover:scale-105 transition-transform duration-300">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0.01)] border border-[rgba(0,255,255,0.1)] text-[#00D9FF] flex items-center justify-center text-lg sm:text-xl shadow-inner md:group-hover:scale-105 md:group-hover:shadow-[0_0_15px_rgba(0,217,255,0.4)] transition-all duration-300">
                 <FaAward className="opacity-90" />
               </div>
               
               <div className="flex-1 min-w-0">
-                <h3 className="text-base sm:text-[17px] font-semibold text-[#f5f5f7] mb-1 truncate tracking-tight">{cert.title}</h3>
+                <h3 className="text-base sm:text-[17px] font-semibold text-[#f3f7ff] mb-1 truncate tracking-tight">{cert.title}</h3>
                 <p className="text-[#86868b] text-[11px] sm:text-[13px] font-medium tracking-wide uppercase truncate">{cert.issuer}</p>
               </div>
             </motion.div>

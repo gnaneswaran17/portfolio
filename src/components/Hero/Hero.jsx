@@ -28,21 +28,21 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1.2 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill mb-6 md:mb-8 hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-default border-[rgba(255,255,255,0.15)] shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill mb-6 md:mb-8 hover:bg-[rgba(0,255,255,0.05)] transition-colors cursor-default border-[rgba(0,255,255,0.15)] shadow-[0_4px_24px_-1px_rgba(0,217,255,0.1)]"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff5f1f] animate-[pulse_3s_cubic-bezier(0.16,1,0.3,1)_infinite] shadow-[0_0_10px_rgba(255,95,31,0.8)]"></span>
-            <span className="text-[#f5f5f7] text-[10px] md:text-xs font-semibold uppercase tracking-widest opacity-90">Available for new opportunities</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00FFB2] animate-[pulse_3s_cubic-bezier(0.16,1,0.3,1)_infinite] shadow-[0_0_10px_rgba(0,255,178,0.8)]"></span>
+            <span className="text-[#f3f7ff] text-[10px] md:text-xs font-semibold uppercase tracking-widest opacity-90">Available for new opportunities</span>
           </motion.div>
 
           <div className="relative">
             {/* Cinematic text bloom behind headline */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ff5f1f]/30 via-[#ff3366]/30 to-[#ff8c42]/30 blur-[60px] md:blur-[100px] rounded-full opacity-60 pointer-events-none -z-10"></div>
-            <h1 className="text-fluid-hero font-bold mb-2 tracking-tighter leading-none px-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-[#f5f5f7] to-[#a0a0a5] drop-shadow-sm">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF]/20 via-[#00C2FF]/20 to-[#00FFB2]/20 blur-[60px] md:blur-[100px] rounded-full opacity-60 pointer-events-none -z-10"></div>
+            <h1 className="text-fluid-hero font-['Space_Grotesk',_sans-serif] font-extrabold mb-2 tracking-tighter leading-none px-2 text-transparent bg-clip-text bg-gradient-to-b from-[#ffffff] via-[#f3f7ff] to-[#a0a0a5] drop-shadow-[0_0_15px_rgba(0,217,255,0.2)]">
               Gnaneswaran A.
             </h1>
           </div>
           
-          <div className="text-fluid-h3 font-bold tracking-tighter h-[50px] sm:h-[60px] md:h-[80px] lg:h-[100px] overflow-hidden flex items-center justify-center w-full mb-6 px-4">
+          <div className="text-fluid-h3 font-['Space_Grotesk',_sans-serif] font-bold tracking-tighter h-[50px] sm:h-[60px] md:h-[80px] lg:h-[100px] overflow-hidden flex items-center justify-center w-full mb-6 px-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentRole}
@@ -50,14 +50,14 @@ export const Hero = () => {
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 exit={{ y: -50, opacity: 0, filter: "blur(12px)" }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-gradient-aurora whitespace-nowrap py-2 drop-shadow-sm"
+                className="text-gradient-cyber whitespace-nowrap py-2 drop-shadow-[0_0_20px_rgba(0,255,178,0.3)]"
               >
                 {roles[currentRole]}
               </motion.div>
             </AnimatePresence>
           </div>
           
-          <p className="text-[#86868b] text-fluid-p max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-normal tracking-tight px-4">
+          <p className="text-[#86868b] text-fluid-p font-['Inter',_sans-serif] max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-normal tracking-tight px-4">
             I craft cinematic digital experiences and scalable backend architectures. Engineering the future, one pixel at a time.
           </p>
 
@@ -73,12 +73,12 @@ export const Hero = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                className="cursor-pointer relative group overflow-hidden rounded-full w-full shadow-[0_8px_32px_-4px_rgba(255,95,31,0.4)] hover:shadow-[0_16px_48px_-8px_rgba(255,95,31,0.6)] transition-all duration-500"
+                className="cursor-pointer relative group overflow-hidden rounded-xl w-full shadow-[0_0_40px_rgba(0,217,255,0.35)] hover:shadow-[0_0_60px_rgba(0,217,255,0.5)] transition-all duration-500"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#ff5f1f] via-[#ff3366] to-[#ff8c42] transition-transform duration-700 ease-out group-hover:scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00D9FF] to-[#00C2FF] transition-transform duration-700 ease-out group-hover:scale-105"></div>
                 {/* Subtle shine effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative px-8 py-4 bg-transparent text-white font-semibold text-[15px] flex items-center justify-center gap-2 tracking-tight">
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative px-8 py-4 bg-transparent text-[#05070A] font-bold text-[15px] flex items-center justify-center gap-2 tracking-tight">
                   View My Work
                 </div>
               </motion.div>
@@ -91,8 +91,9 @@ export const Hero = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="w-full sm:w-auto cursor-pointer glass-pill px-8 py-4 text-[15px] font-semibold text-white hover:bg-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.2)] transition-all duration-500 flex items-center justify-center gap-2 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4)] tracking-tight"
+              className="w-full sm:w-auto cursor-pointer rounded-xl bg-[rgba(8,12,18,0.72)] backdrop-blur-[12px] border border-[rgba(0,255,255,0.2)] px-8 py-4 text-[15px] font-semibold text-white hover:bg-[rgba(0,217,255,0.05)] hover:border-[rgba(0,255,255,0.4)] transition-all duration-500 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.05)] hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] tracking-tight relative overflow-hidden"
             >
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.2)] to-transparent opacity-50"></div>
               Download Resume
             </motion.a>
           </div>

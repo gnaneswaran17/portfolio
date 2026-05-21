@@ -64,11 +64,11 @@ export const Navbar = () => {
               className="flex items-center gap-3.5 md:gap-4 group relative"
             >
               {/* Premium Ambient Background Glow */}
-              <div className="absolute top-1/2 left-6 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-[#ff5f1f]/35 to-[#ff3366]/35 rounded-full blur-[20px] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none z-0"></div>
+              <div className="absolute top-1/2 left-6 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-tr from-[#00D9FF]/20 to-[#6E3BFF]/20 rounded-full blur-[20px] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none z-0"></div>
               
               {/* Floating Freeform 3D Logo */}
               <div className="relative w-10 h-10 md:w-[46px] md:h-[46px] flex items-center justify-center transition-all duration-500 flex-shrink-0 z-10">
-                <img src={logo} alt="Gnaneswaran Logo" className="relative z-10 w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(255,95,31,0.4)] group-hover:drop-shadow-[0_8px_20px_rgba(255,95,31,0.6)] group-hover:scale-110 transition-all duration-500" />
+                <img src={logo} alt="Gnaneswaran Logo" className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_15px_rgba(0,217,255,0.4)] group-hover:drop-shadow-[0_0_25px_rgba(0,217,255,0.6)] group-hover:scale-110 transition-all duration-500" />
               </div>
 
               {/* Text Area */}
@@ -120,13 +120,13 @@ export const Navbar = () => {
                 {activeItem === link.path && isScrolled && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 bg-gradient-to-r from-[rgba(255,95,31,0.15)] to-[rgba(255,51,102,0.15)] rounded-full -z-10 shadow-[0_0_12px_rgba(255,95,31,0.2)]"
+                    className="absolute inset-0 bg-gradient-to-r from-[rgba(0,217,255,0.15)] to-[rgba(110,59,255,0.15)] rounded-full -z-10 shadow-[0_0_12px_rgba(0,217,255,0.2)]"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
                 {/* Underline for non-scrolled state */}
                 {!isScrolled && (
-                  <span className="absolute -bottom-1 left-4 right-4 h-[2px] bg-gradient-to-r from-[#ff5f1f] to-[#ff3366] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute -bottom-1 left-4 right-4 h-[2px] bg-gradient-to-r from-[#00D9FF] to-[#6E3BFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 )}
                 <span className="relative z-10 transition-colors duration-300">{link.title}</span>
               </Link>
@@ -138,9 +138,10 @@ export const Navbar = () => {
                 smooth={true}
                 duration={800}
                 offset={-100}
-                className="cursor-pointer relative overflow-hidden group px-6 py-2 rounded-full text-[14px] font-semibold flex items-center justify-center bg-[rgba(255,255,255,0.03)] text-white border border-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.15)] transition-colors duration-500 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.2)]"
+                className="cursor-pointer relative overflow-hidden group px-6 py-2 rounded-full text-[14px] font-semibold flex items-center justify-center bg-[rgba(8,12,18,0.72)] text-white border border-[rgba(0,255,255,0.1)] hover:bg-[rgba(0,217,255,0.05)] hover:border-[rgba(0,255,255,0.3)] transition-colors duration-500 shadow-[0_0_15px_rgba(0,255,255,0.05)] hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] backdrop-blur-[12px]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(255,95,31,0.2)] to-[rgba(255,51,102,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.2)] to-transparent opacity-50"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,217,255,0.2)] to-[rgba(0,255,178,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <span className="relative z-10 drop-shadow-sm">Hire Me</span>
               </Link>
             </motion.div>
@@ -217,7 +218,7 @@ export const Navbar = () => {
                   duration={800}
                   offset={-100}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#ff5f1f] via-[#ff3366] to-[#ff8c42] text-white text-lg font-bold flex items-center justify-center shadow-[0_4px_24px_-1px_rgba(255,95,31,0.4)] active:scale-95 transition-transform transform-gpu"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#00D9FF] to-[#00C2FF] text-[#05070A] text-lg font-bold flex items-center justify-center shadow-[0_0_40px_rgba(0,217,255,0.35)] active:scale-95 transition-transform transform-gpu"
                 >
                   Hire Me
                 </Link>
