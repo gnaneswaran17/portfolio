@@ -1,15 +1,15 @@
 export const experience = [
   {
     id: 1,
-    role: "Web Development Intern",
-    company: "InternPe",
-    period: "2023 - 2024",
+    role: "Full Stack Development Intern",
+    company: "SPARK INVENTIVE",
+    period: "OCT 2025 - MARCH 2026",
     description: [
-      "Developed responsive web applications",
-      "Worked with HTML, CSS, JavaScript, PHP",
-      "Built frontend components and optimized UI/UX",
-      "Participated in debugging and testing workflows",
-      "Used Git and version control for project collaboration"
+      "Worked on full stack development tasks involving frontend and backend technologies.",
+      "Contributed to responsive web application development and feature implementation.",
+      "Collaborated effectively with team members on development tasks, demonstrating strong teamwork and communication skills.",
+      "Assisted in debugging, testing, and improving application functionality.",
+      "Gained practical exposure to software development workflows and scalable application design."
     ]
   }
 ];
