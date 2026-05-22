@@ -23,7 +23,7 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-24 relative overflow-hidden">
+    <section id="skills" className="section-padding relative overflow-hidden">
       
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <motion.div

@@ -36,7 +36,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="contact" className="section-padding relative overflow-hidden">
       
       {/* Background cyber glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[var(--neon-pink)] rounded-full mix-blend-screen filter blur-[200px] opacity-[0.05] pointer-events-none z-0"></div>

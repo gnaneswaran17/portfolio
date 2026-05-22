@@ -33,7 +33,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-10 md:pt-24 md:pb-16 overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative section-padding overflow-hidden">
       
       {/* Immersive Cyber Background elements specific to Hero */}
       <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-[var(--neon-cyan)] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-[pulse_4s_infinite_alternate]"></div>
@@ -66,13 +66,13 @@ export const Hero = () => {
             <span className="text-[var(--neon-green)] text-xs font-['Share_Tech_Mono',_monospace] font-bold tracking-widest uppercase">CONNECTION_ESTABLISHED</span>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative w-full overflow-hidden flex justify-center">
             <h1 className="text-fluid-hero font-['Orbitron',_sans-serif] font-black mb-2 tracking-tighter leading-none px-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-[var(--neon-cyan)] to-[var(--bg-primary)] drop-shadow-[0_0_20px_var(--neon-cyan-dim)] glitch-hover whitespace-nowrap" data-text="GNANESWARAN A.">
               GNANESWARAN A.
             </h1>
           </div>
           
-          <div className="text-fluid-h3 font-['Rajdhani',_sans-serif] font-bold tracking-[0.2em] h-[50px] sm:h-[60px] md:h-[80px] overflow-hidden flex items-center justify-center w-full mb-6 px-4">
+          <div className="text-fluid-subtitle font-['Rajdhani',_sans-serif] font-bold tracking-[0.2em] h-[40px] sm:h-[50px] md:h-[60px] overflow-hidden flex items-center justify-center w-full mb-6 px-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentRole}

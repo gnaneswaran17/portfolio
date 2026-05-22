@@ -4,7 +4,7 @@ import { FaAward } from 'react-icons/fa';
 
 export const Certifications = () => {
   return (
-    <section id="certifications" className="py-20 md:py-24 relative overflow-hidden">
+    <section id="certifications" className="section-padding relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

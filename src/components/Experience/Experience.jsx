@@ -3,7 +3,7 @@ import { experience } from '../../data/experience';
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="experience" className="section-padding relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         <motion.div

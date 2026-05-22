@@ -3,7 +3,7 @@ import { FaTerminal, FaServer, FaCode } from 'react-icons/fa';
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 relative">
+    <section id="about" className="section-padding relative">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         <motion.div
