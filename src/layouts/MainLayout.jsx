@@ -5,6 +5,7 @@ import { useEffect, useState, lazy, Suspense } from 'react';
 import { ReactLenis } from 'lenis/react';
 
 const LineWaves = lazy(() => import('../components/ui/LineWaves'));
+const ClickSpark = lazy(() => import('../components/ui/ClickSpark'));
 
 export const MainLayout = ({ children }) => {
   const { scrollYProgress } = useScroll();
@@ -85,6 +86,19 @@ export const MainLayout = ({ children }) => {
         </main>
         <Footer />
       </div>
+
+      {/* Global click spark effect */}
+      <Suspense fallback={null}>
+        <ClickSpark
+          sparkColor="#ffffff"
+          sparkSize={10}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+          easing="ease-out"
+          extraScale={1}
+        />
+      </Suspense>
     </div>
     </ReactLenis>
   );
