@@ -1,9 +1,11 @@
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { ReactLenis } from 'lenis/react';
 import contentBg from '../assets/content.png';
+
+const LineWaves = lazy(() => import('../components/ui/LineWaves'));
 
 export const MainLayout = ({ children }) => {
   const { scrollYProgress } = useScroll();
@@ -32,7 +34,7 @@ export const MainLayout = ({ children }) => {
       
       {/* Global Dynamic Aurora Background */}
       <div 
-        className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[#05070A]"
+        className="fixed inset-0 overflow-hidden z-0 bg-[#05070A]"
         style={{
           backgroundImage: `url(${contentBg})`,
           backgroundSize: 'cover',
@@ -40,12 +42,32 @@ export const MainLayout = ({ children }) => {
           backgroundRepeat: 'no-repeat',
         }}
       >
+        <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-auto">
+          <Suspense fallback={null}>
+            <LineWaves
+              speed={0.3}
+              innerLineCount={32}
+              outerLineCount={36}
+              warpIntensity={1}
+              rotation={-45}
+              edgeFadeWidth={0}
+              colorCycleSpeed={1}
+              brightness={0.2}
+              color1="#ffffff"
+              color2="#ffffff"
+              color3="#ffffff"
+              enableMouseInteraction
+              mouseInfluence={2}
+            />
+          </Suspense>
+        </div>
+
         {/* Soft vignette overlay for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,7,10,0.6)_100%)]"></div>
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,7,10,0.6)_100%)]"></div>
 
         {/* Mouse interactive ambient glow */}
         <motion.div 
-          className="absolute w-[600px] h-[600px] rounded-full bg-[#00D9FF] mix-blend-screen filter blur-[150px] opacity-[0.05] -z-10"
+          className="absolute w-[600px] h-[600px] rounded-full bg-[#00D9FF] mix-blend-screen filter blur-[150px] opacity-[0.05] -z-10 pointer-events-none"
           animate={{
             x: mousePosition.x - 300,
             y: mousePosition.y - 300,
@@ -54,7 +76,7 @@ export const MainLayout = ({ children }) => {
         />
         
         {/* Grain Texture Overlay for cinematic feel */}
-        <div className="bg-noise mix-blend-overlay opacity-30"></div>
+        <div className="bg-noise mix-blend-overlay opacity-30 pointer-events-none"></div>
       </div>
 
       {/* iOS style minimal scroll progress */}
