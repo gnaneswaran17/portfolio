@@ -1,32 +1,36 @@
 :root {
-  /* Core Apple Dark Mode Palette */
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --bg-elevated: #111111;
+  /* Core Cyber-Noir Palette */
+  --bg-primary: #020205;
+  --bg-secondary: #0a0a0f;
+  --bg-elevated: #11111a;
   
-  /* Premium Sunset/Aurora Gradient Palette */
-  --aurora-orange: #ff5f1f;
-  --aurora-peach: #ff8c42;
-  --aurora-pink: #ff3366;
-  --aurora-purple: #9d4edd;
+  /* High-Contrast Neon Accents */
+  --neon-cyan: #00f0ff;
+  --neon-cyan-dim: rgba(0, 240, 255, 0.2);
+  --neon-pink: #ff0055;
+  --neon-pink-dim: rgba(255, 0, 85, 0.2);
+  --neon-green: #39ff14;
+  --neon-yellow: #fdee30;
   
   /* Text */
-  --text-primary: #f5f5f7;
-  --text-secondary: #86868b;
-  --text-tertiary: #515154;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aab5;
+  --text-tertiary: #5c6773;
   
-  /* iOS Glassmorphism (Extremely high blur, ultra-clean tint) */
-  --glass-bg: rgba(255, 255, 255, 0.015);
-  --glass-bg-hover: rgba(255, 255, 255, 0.035);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(255, 255, 255, 0.12);
+  /* Cyber HUD Elements */
+  --glass-bg: rgba(10, 15, 25, 0.6);
+  --glass-bg-hover: rgba(0, 240, 255, 0.05);
+  --glass-border: rgba(0, 240, 255, 0.15);
+  --glass-border-hover: rgba(0, 240, 255, 0.4);
   
-  /* Cinematic Glows */
-  --glow-subtle: rgba(255, 95, 31, 0.15);
-  --glow-strong: rgba(255, 95, 31, 0.35);
-  --glow-bloom: rgba(255, 140, 66, 0.25);
+  /* Multi-layered Neon Shadows */
+  --shadow-cyan: 0 0 5px rgba(0, 240, 255, 0.3), 0 0 10px rgba(0, 240, 255, 0.2), 0 0 20px rgba(0, 240, 255, 0.1);
+  --shadow-cyan-glow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 80px #00f0ff;
+  --shadow-pink-glow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0055, 0 0 40px #ff0055, 0 0 80px #ff0055;
   
   /* Typography */
-  --font-apple: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
-  --font-mono: 'SF Mono', 'Space Grotesk', ui-monospace, monospace;
+  --font-cyber-display: 'Orbitron', sans-serif;
+  --font-cyber-ui: 'Rajdhani', sans-serif;
+  --font-cyber-mono: 'Share Tech Mono', monospace;
+  --font-body: 'Inter', sans-serif;
 }

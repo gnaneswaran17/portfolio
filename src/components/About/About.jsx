@@ -7,78 +7,100 @@ export const About = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
-          className="max-w-4xl mx-auto text-center mb-16 md:mb-24"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center mb-16 md:mb-24 relative"
         >
-          <h2 className="text-fluid-h2 font-['Space_Grotesk',_sans-serif] font-extrabold text-[#f3f7ff] mb-6 md:mb-8 tracking-tighter">
-            Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D9FF] to-[#00FFB2]">Digital Future</span>
+          {/* Cyberpunk Decorative Header Elements */}
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center gap-4 opacity-50">
+            <span className="w-12 h-[1px] bg-[var(--neon-cyan)]"></span>
+            <span className="font-['Share_Tech_Mono'] text-xs text-[var(--neon-cyan)] tracking-widest">[ SYSTEM_OVERVIEW ]</span>
+            <span className="w-12 h-[1px] bg-[var(--neon-cyan)]"></span>
+          </div>
+
+          <h2 className="text-fluid-h2 font-['Orbitron',_sans-serif] font-black text-white mb-6 md:mb-8 tracking-tighter uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+            Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-green)] drop-shadow-[0_0_20px_var(--neon-cyan-dim)]">Digital Future</span>
           </h2>
-          <p className="text-[#86868b] text-fluid-p leading-relaxed font-light">
+          <p className="text-[var(--text-secondary)] text-fluid-p leading-relaxed font-['Rajdhani',_sans-serif] font-medium tracking-wide">
             I'm a Computer Science graduate driven by a passion for scalable systems and AI-powered solutions. I don't just write code; I craft high-performance architectures that power modern digital experiences.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50, skewX: 10 }}
+            whileInView={{ opacity: 1, x: 0, skewX: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
-            whileHover={{ y: -5, scale: 1.01 }}
-            className="glass-card p-6 sm:p-8 md:p-10 flex flex-col gap-5 md:gap-6 relative overflow-hidden group col-span-1 md:col-span-2 lg:col-span-1"
+            transition={{ duration: 0.6, ease: "backOut", delay: 0.1 }}
+            className="cyber-panel p-6 sm:p-8 md:p-10 flex flex-col gap-5 md:gap-6 relative group col-span-1 md:col-span-2 lg:col-span-1"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#00D9FF] mix-blend-screen filter blur-[60px] opacity-[0.05] md:opacity-0 md:group-hover:opacity-20 transition-opacity duration-700 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0.01)] border border-[rgba(0,255,255,0.1)] text-[#00D9FF] flex items-center justify-center text-xl sm:text-2xl shadow-inner md:group-hover:scale-110 md:group-hover:shadow-[0_0_15px_rgba(0,217,255,0.4)] transition-all duration-500 ease-out">
+            {/* Tactical Tag */}
+            <div className="absolute top-0 right-0 bg-[var(--neon-cyan)] text-black font-['Share_Tech_Mono'] text-[10px] font-bold px-2 py-1 tracking-widest" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 10px 100%)' }}>
+              [01 // BACKEND]
+            </div>
+
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[var(--neon-cyan-dim)] border border-[var(--neon-cyan)] text-[var(--neon-cyan)] flex items-center justify-center text-xl sm:text-2xl shadow-[0_0_15px_var(--neon-cyan-dim)] group-hover:scale-110 group-hover:bg-[var(--neon-cyan)] group-hover:text-black transition-all duration-300" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%, 0% 25%)' }}>
               <FaServer />
             </div>
             <div>
-              <h3 className="text-[#f3f7ff] font-semibold text-xl sm:text-2xl mb-2 sm:mb-3 tracking-tight">Robust Backend</h3>
-              <p className="text-[#86868b] text-sm sm:text-base font-light leading-relaxed">
-                Specializing in Java and Spring Boot, I build secure, highly scalable REST APIs and engineer databases with PostgreSQL and MongoDB.
+              <h3 className="text-white font-['Rajdhani',_sans-serif] font-bold text-2xl sm:text-3xl mb-2 tracking-wide uppercase">Robust Backend</h3>
+              <p className="text-[var(--text-secondary)] text-sm sm:text-base font-['Share_Tech_Mono'] leading-relaxed">
+                &gt; Specializing in Java and Spring Boot.<br/>
+                &gt; Building secure, REST APIs.<br/>
+                &gt; PostgreSQL & MongoDB integration.
               </p>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.2 }}
-            whileHover={{ y: -5, scale: 1.01 }}
-            className="glass-card p-6 sm:p-8 md:p-10 flex flex-col gap-5 md:gap-6 relative overflow-hidden group"
+            transition={{ duration: 0.6, ease: "backOut", delay: 0.2 }}
+            className="cyber-panel p-6 sm:p-8 md:p-10 flex flex-col gap-5 md:gap-6 relative group"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#00FFB2] mix-blend-screen filter blur-[60px] opacity-[0.05] md:opacity-0 md:group-hover:opacity-20 transition-opacity duration-700 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0.01)] border border-[rgba(0,255,255,0.1)] text-[#00FFB2] flex items-center justify-center text-xl sm:text-2xl shadow-inner md:group-hover:scale-110 md:group-hover:shadow-[0_0_15px_rgba(0,255,178,0.4)] transition-all duration-500 ease-out">
+            {/* Tactical Tag */}
+            <div className="absolute top-0 right-0 bg-[var(--neon-green)] text-black font-['Share_Tech_Mono'] text-[10px] font-bold px-2 py-1 tracking-widest" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 10px 100%)' }}>
+              [02 // FRONTEND]
+            </div>
+
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[rgba(57,255,20,0.1)] border border-[var(--neon-green)] text-[var(--neon-green)] flex items-center justify-center text-xl sm:text-2xl shadow-[0_0_15px_rgba(57,255,20,0.2)] group-hover:scale-110 group-hover:bg-[var(--neon-green)] group-hover:text-black transition-all duration-300" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%, 0% 25%)' }}>
               <FaCode />
             </div>
             <div>
-              <h3 className="text-[#f3f7ff] font-semibold text-xl sm:text-2xl mb-2 sm:mb-3 tracking-tight">Cinematic UI</h3>
-              <p className="text-[#86868b] text-sm sm:text-base font-light leading-relaxed">
-                Crafting pixel-perfect, responsive interfaces in React.js that blur the lines between web applications and native desktop software.
+              <h3 className="text-white font-['Rajdhani',_sans-serif] font-bold text-2xl sm:text-3xl mb-2 tracking-wide uppercase">Cinematic UI</h3>
+              <p className="text-[var(--text-secondary)] text-sm sm:text-base font-['Share_Tech_Mono'] leading-relaxed">
+                &gt; Crafting pixel-perfect React.js interfaces.<br/>
+                &gt; Blurring lines between web apps & native software.<br/>
+                &gt; Immersive animations & layouts.
               </p>
             </div>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, x: 50, skewX: -10 }}
+            whileInView={{ opacity: 1, x: 0, skewX: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.3 }}
-            whileHover={{ y: -5, scale: 1.01 }}
-            className="glass-card p-6 sm:p-8 md:p-10 flex flex-col gap-5 md:gap-6 relative overflow-hidden group md:col-span-2 lg:col-span-1"
+            transition={{ duration: 0.6, ease: "backOut", delay: 0.3 }}
+            className="cyber-panel p-6 sm:p-8 md:p-10 flex flex-col gap-5 md:gap-6 relative group md:col-span-2 lg:col-span-1"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#6E3BFF] mix-blend-screen filter blur-[60px] opacity-[0.05] md:opacity-0 md:group-hover:opacity-20 transition-opacity duration-700 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0.01)] border border-[rgba(0,255,255,0.1)] text-[#6E3BFF] flex items-center justify-center text-lg sm:text-xl shadow-inner md:group-hover:scale-110 md:group-hover:shadow-[0_0_15px_rgba(110,59,255,0.4)] transition-all duration-500 ease-out">
+            {/* Tactical Tag */}
+            <div className="absolute top-0 right-0 bg-[var(--neon-pink)] text-black font-['Share_Tech_Mono'] text-[10px] font-bold px-2 py-1 tracking-widest" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 10px 100%)' }}>
+              [03 // SYSTEMS]
+            </div>
+
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[var(--neon-pink-dim)] border border-[var(--neon-pink)] text-[var(--neon-pink)] flex items-center justify-center text-xl sm:text-2xl shadow-[0_0_15px_var(--neon-pink-dim)] group-hover:scale-110 group-hover:bg-[var(--neon-pink)] group-hover:text-black transition-all duration-300" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%, 0% 25%)' }}>
               <FaTerminal />
             </div>
             <div>
-              <h3 className="text-[#f3f7ff] font-semibold text-xl sm:text-2xl mb-2 sm:mb-3 tracking-tight">AI & Automation</h3>
-              <p className="text-[#86868b] text-sm sm:text-base font-light leading-relaxed">
-                Integrating cutting-edge AI APIs to build intelligent automation tools, streamlining workflows, and creating next-generation software.
+              <h3 className="text-white font-['Rajdhani',_sans-serif] font-bold text-2xl sm:text-3xl mb-2 tracking-wide uppercase">AI & Automation</h3>
+              <p className="text-[var(--text-secondary)] text-sm sm:text-base font-['Share_Tech_Mono'] leading-relaxed">
+                &gt; Integrating cutting-edge AI APIs.<br/>
+                &gt; Building intelligent automation tools.<br/>
+                &gt; Streamlining enterprise workflows.
               </p>
             </div>
           </motion.div>

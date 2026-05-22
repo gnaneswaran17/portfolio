@@ -29,17 +29,17 @@ export const MainLayout = ({ children }) => {
 
   return (
     <ReactLenis root options={{ lerp: 0.08, duration: 1.5, smoothWheel: true }}>
-      <div className="bg-[#120F17] min-h-screen text-[#f3f7ff] font-['Inter',_sans-serif] overflow-x-hidden selection:bg-[#00D9FF]/30 selection:text-white relative perspective-1000">
+      <div className="bg-[var(--bg-primary)] min-h-screen text-[var(--text-primary)] font-['Inter',_sans-serif] overflow-x-hidden relative perspective-1000">
       
-      {/* Plain Background */}
-      <div 
-        className="fixed inset-0 overflow-hidden z-0 bg-[#120F17]"
-      >
-      </div>
+      {/* Cyber Grid Background */}
+      <div className="fixed inset-0 overflow-hidden z-0 bg-cyber-grid"></div>
+      
+      {/* CRT Scanline Overlay */}
+      <div className="crt-scanlines"></div>
 
-      {/* iOS style minimal scroll progress */}
+      {/* Cyberpunk Neon Scroll Progress */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#00D9FF] via-[#00FFB2] to-[#6E3BFF] origin-left z-[100] shadow-[0_0_10px_rgba(0,217,255,0.5)]"
+        className="fixed top-0 left-0 right-0 h-[4px] bg-[var(--neon-pink)] origin-left z-[100] shadow-[0_0_15px_var(--neon-pink)]"
         style={{ scaleX }}
       />
       
@@ -54,7 +54,7 @@ export const MainLayout = ({ children }) => {
       {/* Global click spark effect */}
       <Suspense fallback={null}>
         <ClickSpark
-          sparkColor="#ffffff"
+          sparkColor="#ff0000"
           sparkSize={10}
           sparkRadius={15}
           sparkCount={8}

@@ -10,37 +10,43 @@ export const Certifications = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-          className="mb-12 md:mb-20 text-center"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-12 md:mb-20 text-center relative"
         >
-          <h2 className="text-fluid-h2 font-['Space_Grotesk',_sans-serif] font-extrabold text-[#f3f7ff] mb-4 md:mb-6 tracking-tighter">
-            Credentials
+          {/* Cyberpunk Decorative Header Elements */}
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center gap-4 opacity-50">
+            <span className="w-12 h-[1px] bg-[var(--neon-cyan)]"></span>
+            <span className="font-['Share_Tech_Mono'] text-xs text-[var(--neon-cyan)] tracking-widest">[ SECURITY_CLEARANCE ]</span>
+            <span className="w-12 h-[1px] bg-[var(--neon-cyan)]"></span>
+          </div>
+
+          <h2 className="text-fluid-h2 font-['Orbitron',_sans-serif] font-black text-white mb-4 md:mb-6 tracking-tighter uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+            Verified <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-pink)] drop-shadow-[0_0_15px_var(--neon-cyan-dim)]">Credentials</span>
           </h2>
-          <p className="text-[#86868b] text-fluid-p font-light">
-            Continuous learning and professional certifications.
+          <p className="text-[var(--text-secondary)] text-fluid-p font-['Share_Tech_Mono'] leading-relaxed tracking-wide">
+            &gt; VALIDATING_CERTIFICATES...<br/>
+            &gt; ACCESS_GRANTED.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 1, 0.5, 1] }}
-              whileHover={{ y: -4 }}
-              className="glass-card p-5 sm:p-6 rounded-[24px] sm:rounded-[28px] flex items-center gap-4 sm:gap-5 group hover:bg-[rgba(0,217,255,0.05)] hover:border-[rgba(0,255,255,0.3)] transition-all duration-300 relative overflow-hidden shadow-[0_0_15px_rgba(0,255,255,0.05)] hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] bg-[rgba(8,12,18,0.72)] border border-[rgba(0,255,255,0.1)] backdrop-blur-md"
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="cyber-panel p-5 sm:p-6 flex items-center gap-4 sm:gap-5 group hover:border-[var(--neon-pink)] transition-all duration-300"
             >
-              <div className="absolute top-0 right-0 w-20 h-20 sm:w-24 sm:h-24 bg-[#00D9FF] mix-blend-screen filter blur-[40px] opacity-0 md:group-hover:opacity-15 transition-opacity duration-500 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-              
-              <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.05)] to-[rgba(255,255,255,0.01)] border border-[rgba(0,255,255,0.1)] text-[#00D9FF] flex items-center justify-center text-lg sm:text-xl shadow-inner md:group-hover:scale-105 md:group-hover:shadow-[0_0_15px_rgba(0,217,255,0.4)] transition-all duration-300">
-                <FaAward className="opacity-90" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-[var(--bg-primary)] border border-[var(--neon-cyan)] text-[var(--neon-cyan)] flex items-center justify-center text-lg sm:text-xl shadow-[0_0_10px_var(--neon-cyan-dim)] group-hover:bg-[var(--neon-pink)] group-hover:text-black group-hover:border-[var(--neon-pink)] transition-colors duration-300 transform rotate-45">
+                <FaAward className="opacity-90 transform -rotate-45" />
               </div>
               
               <div className="flex-1 min-w-0">
-                <h3 className="text-base sm:text-[17px] font-semibold text-[#f3f7ff] mb-1 truncate tracking-tight">{cert.title}</h3>
-                <p className="text-[#86868b] text-[11px] sm:text-[13px] font-medium tracking-wide uppercase truncate">{cert.issuer}</p>
+                <h3 className="text-base sm:text-lg font-['Rajdhani',_sans-serif] font-bold text-white mb-1 truncate tracking-wider uppercase">{cert.title}</h3>
+                <p className="text-[var(--text-secondary)] text-xs font-['Share_Tech_Mono'] tracking-widest uppercase truncate border-l-2 border-[var(--neon-cyan)] pl-2">{cert.issuer}</p>
               </div>
             </motion.div>
           ))}
