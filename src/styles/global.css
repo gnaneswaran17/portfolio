@@ -148,7 +148,7 @@ body {
 
 /* Fluid Typography Utilities */
 .text-fluid-hero {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(1.5rem, 8vw, 7rem);
   line-height: 1;
 }
 
