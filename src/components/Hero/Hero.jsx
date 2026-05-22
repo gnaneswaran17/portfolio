@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GlassButton } from '../ui/GlassButton';
 
 export const Hero = () => {
-  const roles = ["Trader.", "Problem Solver.", "Full Stack Developer.", "UI/UX Enthusiast."];
+  const roles = ["Full stack developer", "problem solver", "UI/UX Enthusiast", "Trader"];
   const [currentRole, setCurrentRole] = useState(0);
   const [bootText, setBootText] = useState("");
   const fullBootText = "INITIALIZING SYSTEM_CORE... [OK]\nLOADING CYBER_ASSETS... [OK]\nESTABLISHING SECURE_LINK... [OK]\nWELCOME, USER.";
