@@ -3,7 +3,6 @@ import { Footer } from '../components/Footer/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect, useState, lazy, Suspense } from 'react';
 import { ReactLenis } from 'lenis/react';
-import contentBg from '../assets/content.png';
 
 const LineWaves = lazy(() => import('../components/ui/LineWaves'));
 
@@ -35,12 +34,6 @@ export const MainLayout = ({ children }) => {
       {/* Global Dynamic Aurora Background */}
       <div 
         className="fixed inset-0 overflow-hidden z-0 bg-[#05070A]"
-        style={{
-          backgroundImage: `url(${contentBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
       >
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-auto">
           <Suspense fallback={null}>
