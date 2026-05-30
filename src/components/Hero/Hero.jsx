@@ -31,6 +31,14 @@ export const Hero = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Gnaneswaran_A_Resume.pdf";
+    link.download = "Gnaneswaran_A_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative section-padding overflow-hidden">
@@ -111,10 +119,7 @@ export const Hero = () => {
             </Link>
             
             <GlassButton
-              as="a"
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={handleResumeDownload}
               className="w-full sm:w-48"
               size="lg"
               variant="secondary"
